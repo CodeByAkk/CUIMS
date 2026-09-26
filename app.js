@@ -275,4 +275,47 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // ─────────────────────────────────────────────────────────
+  // SIDEBAR NAVIGATION DRAWER TOGGLE
+  // ─────────────────────────────────────────────────────────
+  const hamburgerButtons = document.querySelectorAll('.hamburger-btn');
+  const sidebarBackdrops = document.querySelectorAll('.sidebar-backdrop');
+  const sidebarLinks     = document.querySelectorAll('.sidebar-link');
+
+  function toggleDrawer() {
+    const mainLayouts = document.querySelectorAll('.dashboard-main-layout');
+    mainLayouts.forEach(layout => {
+      layout.classList.toggle('drawer-open');
+    });
+  }
+
+  function closeDrawer() {
+    const mainLayouts = document.querySelectorAll('.dashboard-main-layout');
+    mainLayouts.forEach(layout => {
+      layout.classList.remove('drawer-open');
+    });
+  }
+
+  hamburgerButtons.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleDrawer();
+    });
+  });
+
+  sidebarBackdrops.forEach(backdrop => {
+    backdrop.addEventListener('click', () => {
+      closeDrawer();
+    });
+  });
+
+  sidebarLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (window.innerWidth <= 992) {
+        closeDrawer();
+      }
+    });
+  });
+
 });

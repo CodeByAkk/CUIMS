@@ -9,11 +9,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const screenLogin     = document.getElementById('screen-login');
   const screenDashboard = document.getElementById('screen-dashboard');
   const screenProfile   = document.getElementById('screen-profile');
+  const screenAcademics = document.getElementById('screen-academics');
+  const screenAccounts  = document.getElementById('screen-accounts');
 
   const allScreens = {
     login:     screenLogin,
     dashboard: screenDashboard,
-    profile:   screenProfile
+    profile:   screenProfile,
+    academics: screenAcademics,
+    accounts:  screenAccounts
   };
 
   // ── History / Screen Navigation ──────────────────────────
@@ -53,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // On first load, set the initial history state
   const initialHash = location.hash.replace('#', '') || 'login';
-  const validScreens = ['login', 'dashboard', 'profile'];
+  const validScreens = ['login', 'dashboard', 'profile', 'academics', 'accounts'];
   const startScreen = validScreens.includes(initialHash) ? initialHash : 'login';
   history.replaceState({ screen: startScreen }, '', `#${startScreen}`);
   showScreen(startScreen, false);
@@ -312,9 +316,32 @@ document.addEventListener('DOMContentLoaded', () => {
   sidebarLinks.forEach(link => {
     link.addEventListener('click', (e) => {
       e.preventDefault();
-      if (window.innerWidth <= 992) {
-        closeDrawer();
+      const text = (link.querySelector('.sidebar-link-text')?.textContent || '').trim().toLowerCase();
+      const screenAttr = link.getAttribute('data-screen');
+
+      closeDrawer();
+
+      if (screenAttr === 'accounts' || text === 'accounts' || text === 'account') {
+        showScreen('accounts');
+      } else if (screenAttr === 'academics' || text === 'academics') {
+        showScreen('academics');
       }
+    });
+  });
+
+  // Home / Logo clicks back to dashboard
+  document.querySelectorAll('.btn-nav-home').forEach(btn => {
+    btn.addEventListener('click', () => {
+      closeDrawer();
+      showScreen('dashboard');
+    });
+  });
+
+  // Profile clicks
+  document.querySelectorAll('.btn-nav-profile').forEach(btn => {
+    btn.addEventListener('click', () => {
+      closeDrawer();
+      showScreen('profile');
     });
   });
 

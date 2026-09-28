@@ -999,7 +999,7 @@
             <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
           </svg>
         </button>
-        <button type="button" class="nav-icon-btn" aria-label="Home" title="Home">
+        <button type="button" class="nav-icon-btn btn-nav-home" aria-label="Home" title="Home">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
             <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
             <polyline points="9 22 9 12 15 12 15 22"/>
@@ -1272,7 +1272,7 @@
             <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
           </svg>
         </button>
-        <button type="button" class="nav-icon-btn" aria-label="Home" title="Home">
+        <button type="button" class="nav-icon-btn btn-nav-home" aria-label="Home" title="Home">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
             <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
             <polyline points="9 22 9 12 15 12 15 22"/>
@@ -1599,6 +1599,531 @@
               </table>
             </div>
           </section>
+
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- SCREEN 5: ACCOUNTS / FEE RECEIPTS         -->
+  <!-- ========================================== -->
+  <div id="screen-accounts" class="screen-view hidden" aria-label="Student Accounts and Fee Receipts Screen">
+
+    <!-- Top Navigation Bar (same as dashboard & profile) -->
+    <header class="dashboard-navbar">
+      <div class="nav-left">
+        <button type="button" class="nav-icon-btn hamburger-btn" aria-label="Toggle Sidebar Menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" width="22" height="22">
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <line x1="3" y1="12" x2="21" y2="12"/>
+            <line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+        </button>
+        <div class="cuims-brand-logo nav-logo btn-nav-home" title="Back to Dashboard" style="cursor: pointer;">
+          <div class="cuims-logo-mark nav-mark">
+            <span class="cu-badge">CU</span>
+          </div>
+          <div class="cuims-logo-text">
+            <div class="ims-title">IMS</div>
+            <div class="ims-sub-1">CHANDIGARH UNIVERSITY</div>
+            <div class="ims-sub-2">INFORMATION MANAGEMENT SYSTEM</div>
+          </div>
+        </div>
+      </div>
+      <div class="nav-center">
+        <div class="nav-search-bar">
+          <input type="text" placeholder="Search &amp; Bookmark your page" aria-label="Search and Bookmark your page">
+          <button type="button" class="search-submit-btn" aria-label="Search">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2.2" width="16" height="16">
+              <circle cx="11" cy="11" r="8"/>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="nav-right">
+        <button type="button" class="nav-icon-btn" aria-label="Notifications" title="Notifications">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+          </svg>
+        </button>
+        <button type="button" class="nav-icon-btn" aria-label="Bookmarks" title="Bookmarks">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+          </svg>
+        </button>
+        <button type="button" class="nav-icon-btn btn-nav-home" aria-label="Home" title="Home">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+            <polyline points="9 22 9 12 15 12 15 22"/>
+          </svg>
+        </button>
+        <button type="button" class="nav-icon-btn" aria-label="Settings" title="Settings">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+            <circle cx="12" cy="12" r="3"/>
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+          </svg>
+        </button>
+        <div class="user-profile-cluster">
+          <div class="user-text-info">
+            <span class="user-name">AMUL</span>
+            <span class="user-uid">26BCS12924</span>
+          </div>
+          <div class="user-avatar-wrap btn-nav-profile" title="My Profile" style="cursor:pointer;">
+            <img src="assets/amul_avatar.png?v=3" alt="Student Profile Avatar" class="user-avatar-img">
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="dashboard-main-layout">
+      <!-- Left Side Navigation Drawer -->
+      <aside class="sidebar-drawer" id="sidebar-drawer-accounts" aria-label="Accounts Navigation Drawer">
+        <nav class="sidebar-nav">
+          <ul class="sidebar-menu">
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link" data-screen="academics">
+                <span class="sidebar-link-text">Academics</span>
+                <svg class="sidebar-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="9 18 15 12 9 6"/></svg>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link sidebar-link-active" data-screen="accounts">
+                <span class="sidebar-link-text">Accounts</span>
+                <svg class="sidebar-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="9 18 15 12 9 6"/></svg>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link">
+                <span class="sidebar-link-text">Administration</span>
+                <svg class="sidebar-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="9 18 15 12 9 6"/></svg>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link">
+                <span class="sidebar-link-text">Apply for Loan Documents</span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link">
+                <span class="sidebar-link-text">Apply for NOC</span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link">
+                <span class="sidebar-link-text">Apply Internship NOC</span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link">
+                <span class="sidebar-link-text">Centre For Student Wellbeing (CSW)</span>
+                <svg class="sidebar-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="9 18 15 12 9 6"/></svg>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link">
+                <span class="sidebar-link-text">Counseling Therapy Clinic Registration</span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link">
+                <span class="sidebar-link-text">DCPD</span>
+                <svg class="sidebar-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="9 18 15 12 9 6"/></svg>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link">
+                <span class="sidebar-link-text">DLL MOOC Coordinator List</span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link">
+                <span class="sidebar-link-text">E Library</span>
+                <svg class="sidebar-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="9 18 15 12 9 6"/></svg>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link">
+                <span class="sidebar-link-text">Examination</span>
+                <svg class="sidebar-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="9 18 15 12 9 6"/></svg>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link">
+                <span class="sidebar-link-text">Hostel</span>
+                <svg class="sidebar-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="9 18 15 12 9 6"/></svg>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link">
+                <span class="sidebar-link-text">Hostel Leave</span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link">
+                <span class="sidebar-link-text">International Student Coordination Cell</span>
+                <svg class="sidebar-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="9 18 15 12 9 6"/></svg>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link">
+                <span class="sidebar-link-text">Placement</span>
+                <svg class="sidebar-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="9 18 15 12 9 6"/></svg>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link">
+                <span class="sidebar-link-text">Student Welfare</span>
+                <svg class="sidebar-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="9 18 15 12 9 6"/></svg>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link">
+                <span class="sidebar-link-text">Feedback</span>
+                <svg class="sidebar-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="9 18 15 12 9 6"/></svg>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- Mobile Backdrop -->
+      <div class="sidebar-backdrop"></div>
+
+      <!-- Accounts Main Body -->
+      <main class="dashboard-body">
+        <div class="accounts-page-container">
+
+          <!-- Page Title Banner -->
+          <div class="accounts-title-bar">
+            <div>
+              <h1 class="accounts-page-title">Accounts &amp; Fee Receipts</h1>
+              <div class="accounts-sub-info">Chandigarh University &bull; University Institute of Engineering (UIE)</div>
+            </div>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <span style="background:rgba(255,255,255,0.2); color:#fff; font-size:12px; font-weight:700; padding:4px 10px; border-radius:4px;">
+                Uni-Account No: 26BCS12924
+              </span>
+            </div>
+          </div>
+
+          <!-- Quick Summary Stats -->
+          <div class="accounts-stats-grid">
+            <div class="account-stat-card">
+              <div class="stat-icon-wrap stat-icon-green">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="22" height="22">
+                  <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                </svg>
+              </div>
+              <div class="stat-card-text">
+                <span class="stat-card-label">Total Deposited</span>
+                <span class="stat-card-value">₹80,000/-</span>
+                <span class="stat-card-sub">2 Transactions</span>
+              </div>
+            </div>
+
+            <div class="account-stat-card">
+              <div class="stat-icon-wrap stat-icon-blue">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                  <polyline points="14 2 14 8 20 8"/>
+                  <line x1="16" y1="13" x2="8" y2="13"/>
+                  <line x1="16" y1="17" x2="8" y2="17"/>
+                  <polyline points="10 9 9 9 8 9"/>
+                </svg>
+              </div>
+              <div class="stat-card-text">
+                <span class="stat-card-label">Receipts Available</span>
+                <span class="stat-card-value">2 Receipts</span>
+                <span class="stat-card-sub" style="color:#2563eb;">UIE-79672 &amp; UIE-94395</span>
+              </div>
+            </div>
+
+            <div class="account-stat-card">
+              <div class="stat-icon-wrap stat-icon-purple">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22">
+                  <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                  <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                </svg>
+              </div>
+              <div class="stat-card-text">
+                <span class="stat-card-label">Program / Sem</span>
+                <span class="stat-card-value">B.E. CSE</span>
+                <span class="stat-card-sub" style="color:#7c3aed;">Semester 1 / 1</span>
+              </div>
+            </div>
+
+            <div class="account-stat-card">
+              <div class="stat-icon-wrap stat-icon-green">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="22" height="22">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+              </div>
+              <div class="stat-card-text">
+                <span class="stat-card-label">Payment Status</span>
+                <span class="stat-card-value" style="color:#059669;">Verified</span>
+                <span class="stat-card-sub">Student Copy Issued</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section: Fee Receipts List Table -->
+          <section class="accounts-section-card">
+            <div class="accounts-section-header">
+              <span>Official Fee Payment Receipts</span>
+              <span style="font-size:0.75rem; text-transform:none; font-weight:500; color:#475569;">
+                Click "Download PDF" to download the original official receipt
+              </span>
+            </div>
+            <div class="accounts-section-body" style="padding:0;">
+              <div class="table-responsive">
+                <table class="accounts-table">
+                  <thead>
+                    <tr>
+                      <th style="width:40px;">#</th>
+                      <th>Receipt No.</th>
+                      <th>Date</th>
+                      <th>Accounts Head</th>
+                      <th>Payment Mode</th>
+                      <th>Bank / Ref No.</th>
+                      <th style="text-align:right;">Amount (INR)</th>
+                      <th style="text-align:center;">Status</th>
+                      <th style="text-align:center;">Download PDF</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <!-- Receipt 1: UIE-79672 -->
+                    <tr>
+                      <td>1</td>
+                      <td>
+                        <span class="receipt-no-badge">UIE-79672</span>
+                      </td>
+                      <td>14-07-2026</td>
+                      <td>Tuition / College Fee</td>
+                      <td>By Online (Serial: <strong>UM3801560</strong>)</td>
+                      <td>HDFC-472646</td>
+                      <td style="text-align:right; font-weight:700; color:#1e293b;">₹35,000.00</td>
+                      <td style="text-align:center;">
+                        <span class="status-badge-paid">
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" width="10" height="10"><polyline points="20 6 9 17 4 12"/></svg>
+                          Paid
+                        </span>
+                      </td>
+                      <td style="text-align:center;">
+                        <div class="table-actions" style="justify-content:center;">
+                          <a href="assets/receipt_UIE-79672.pdf" download="receipt_UIE-79672.pdf" class="btn-receipt-download" title="Download exact PDF receipt UIE-79672">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="14" height="14">
+                              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                              <polyline points="7 10 12 15 17 10"/>
+                              <line x1="12" y1="15" x2="12" y2="3"/>
+                            </svg>
+                            Download PDF
+                          </a>
+                          <a href="assets/receipt_UIE-79672.pdf" target="_blank" class="btn-receipt-view" title="Open PDF in new tab">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13">
+                              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                              <circle cx="12" cy="12" r="3"/>
+                            </svg>
+                            View
+                          </a>
+                        </div>
+                      </td>
+                    </tr>
+
+                    <!-- Receipt 2: UIE-94395 -->
+                    <tr>
+                      <td>2</td>
+                      <td>
+                        <span class="receipt-no-badge">UIE-94395</span>
+                      </td>
+                      <td>27-07-2026</td>
+                      <td>Tuition / College Fee</td>
+                      <td>By Online (Serial: <strong>UM3830733</strong>)</td>
+                      <td>HDFC-472646</td>
+                      <td style="text-align:right; font-weight:700; color:#1e293b;">₹45,000.00</td>
+                      <td style="text-align:center;">
+                        <span class="status-badge-paid">
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" width="10" height="10"><polyline points="20 6 9 17 4 12"/></svg>
+                          Paid
+                        </span>
+                      </td>
+                      <td style="text-align:center;">
+                        <div class="table-actions" style="justify-content:center;">
+                          <a href="assets/receipt_UIE-94395.pdf" download="receipt_UIE-94395.pdf" class="btn-receipt-download" title="Download exact PDF receipt UIE-94395">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="14" height="14">
+                              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                              <polyline points="7 10 12 15 17 10"/>
+                              <line x1="12" y1="15" x2="12" y2="3"/>
+                            </svg>
+                            Download PDF
+                          </a>
+                          <a href="assets/receipt_UIE-94395.pdf" target="_blank" class="btn-receipt-view" title="Open PDF in new tab">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13">
+                              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                              <circle cx="12" cy="12" r="3"/>
+                            </svg>
+                            View
+                          </a>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+
+          <!-- Section: Detailed Receipt Cards with Direct Downloads -->
+          <div class="receipts-preview-grid">
+
+            <!-- Card 1: UIE-79672 (₹35,000) -->
+            <div class="official-receipt-card">
+              <div class="receipt-card-top">
+                <div class="receipt-card-brand">
+                  <div class="receipt-cu-logo">CU</div>
+                  <div class="receipt-cu-titles">
+                    <h4>CHANDIGARH UNIVERSITY</h4>
+                    <span>UIE &bull; Student Copy</span>
+                  </div>
+                </div>
+                <span class="receipt-type-badge">Receipt: UIE-79672</span>
+              </div>
+
+              <div class="receipt-card-body">
+                <div class="receipt-details-list">
+                  <div class="receipt-detail-row">
+                    <span class="rd-label">Student Name</span>
+                    <span class="rd-val">AMUL KUMAR KUSHVAHA</span>
+                  </div>
+                  <div class="receipt-detail-row">
+                    <span class="rd-label">Father's Name</span>
+                    <span class="rd-val">SANJAY PRASAD</span>
+                  </div>
+                  <div class="receipt-detail-row">
+                    <span class="rd-label">Uni-Account No.</span>
+                    <span class="rd-val">26BCS12924</span>
+                  </div>
+                  <div class="receipt-detail-row">
+                    <span class="rd-label">Receipt Dated</span>
+                    <span class="rd-val">14-07-2026</span>
+                  </div>
+                  <div class="receipt-detail-row">
+                    <span class="rd-label">Program &amp; Sem</span>
+                    <span class="rd-val">B.E. (CSE) - Sem 1/1</span>
+                  </div>
+                  <div class="receipt-detail-row">
+                    <span class="rd-label">Payment Mode</span>
+                    <span class="rd-val">By Online (UM3801560)</span>
+                  </div>
+                  <div class="receipt-detail-row">
+                    <span class="rd-label">Drawn On</span>
+                    <span class="rd-val">HDFC-472646 (Dated: 14-07-2026)</span>
+                  </div>
+                  <div class="receipt-detail-row" style="padding-top:6px; align-items:center;">
+                    <span class="rd-label" style="font-size:0.9rem; color:#1e293b;">Total Amount</span>
+                    <span class="rd-amount">Rs. 35000/-</span>
+                  </div>
+                  <div style="font-size:0.75rem; color:#64748b; font-style:italic;">
+                    (In words) Rs. Rupees Thirty Five Thousand ONLY ONLY
+                  </div>
+                </div>
+              </div>
+
+              <div class="receipt-card-footer">
+                <a href="assets/receipt_UIE-79672.pdf" download="receipt_UIE-79672.pdf" class="btn-download-primary">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="18" height="18">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                    <polyline points="7 10 12 15 17 10"/>
+                    <line x1="12" y1="15" x2="12" y2="3"/>
+                  </svg>
+                  Download PDF Receipt (UIE-79672)
+                </a>
+                <a href="assets/receipt_UIE-79672.pdf" target="_blank" class="btn-view-secondary">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                    <circle cx="12" cy="12" r="3"/>
+                  </svg>
+                  View / Open in Browser
+                </a>
+              </div>
+            </div>
+
+            <!-- Card 2: UIE-94395 (₹45,000) -->
+            <div class="official-receipt-card">
+              <div class="receipt-card-top">
+                <div class="receipt-card-brand">
+                  <div class="receipt-cu-logo">CU</div>
+                  <div class="receipt-cu-titles">
+                    <h4>CHANDIGARH UNIVERSITY</h4>
+                    <span>UIE &bull; Student Copy</span>
+                  </div>
+                </div>
+                <span class="receipt-type-badge">Receipt: UIE-94395</span>
+              </div>
+
+              <div class="receipt-card-body">
+                <div class="receipt-details-list">
+                  <div class="receipt-detail-row">
+                    <span class="rd-label">Student Name</span>
+                    <span class="rd-val">AMUL KUMAR KUSHVAHA</span>
+                  </div>
+                  <div class="receipt-detail-row">
+                    <span class="rd-label">Father's Name</span>
+                    <span class="rd-val">SANJAY PRASAD</span>
+                  </div>
+                  <div class="receipt-detail-row">
+                    <span class="rd-label">Uni-Account No.</span>
+                    <span class="rd-val">26BCS12924</span>
+                  </div>
+                  <div class="receipt-detail-row">
+                    <span class="rd-label">Receipt Dated</span>
+                    <span class="rd-val">27-07-2026</span>
+                  </div>
+                  <div class="receipt-detail-row">
+                    <span class="rd-label">Program &amp; Sem</span>
+                    <span class="rd-val">B.E. (CSE) - Sem 1/1</span>
+                  </div>
+                  <div class="receipt-detail-row">
+                    <span class="rd-label">Payment Mode</span>
+                    <span class="rd-val">By Online (UM3830733)</span>
+                  </div>
+                  <div class="receipt-detail-row">
+                    <span class="rd-label">Drawn On</span>
+                    <span class="rd-val">HDFC-472646 (Dated: 27-07-2026)</span>
+                  </div>
+                  <div class="receipt-detail-row" style="padding-top:6px; align-items:center;">
+                    <span class="rd-label" style="font-size:0.9rem; color:#1e293b;">Total Amount</span>
+                    <span class="rd-amount">Rs. 45000/-</span>
+                  </div>
+                  <div style="font-size:0.75rem; color:#64748b; font-style:italic;">
+                    (In words) Rs. Rupees Fourty Five Thousand ONLY ONLY
+                  </div>
+                </div>
+              </div>
+
+              <div class="receipt-card-footer">
+                <a href="assets/receipt_UIE-94395.pdf" download="receipt_UIE-94395.pdf" class="btn-download-primary">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="18" height="18">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                    <polyline points="7 10 12 15 17 10"/>
+                    <line x1="12" y1="15" x2="12" y2="3"/>
+                  </svg>
+                  Download PDF Receipt (UIE-94395)
+                </a>
+                <a href="assets/receipt_UIE-94395.pdf" target="_blank" class="btn-view-secondary">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                    <circle cx="12" cy="12" r="3"/>
+                  </svg>
+                  View / Open in Browser
+                </a>
+              </div>
+            </div>
+
+          </div>
 
         </div>
       </main>

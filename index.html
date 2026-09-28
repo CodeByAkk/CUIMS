@@ -1,0 +1,1376 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CUIMS - Chandigarh University Information Management System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ========================================== -->
+  <!-- SCREEN 1: LOGIN PAGE                       -->
+  <!-- ========================================== -->
+  <main id="screen-login" class="screen-view active" aria-label="Login Screen">
+    <div class="login-page-container">
+      
+      <!-- Top Section (White background) -->
+      <header class="login-header-area">
+        <div class="cuims-brand-logo" aria-label="CUIMS Chandigarh University Information Management System Logo">
+          <div class="cuims-logo-mark">
+            <span class="cu-badge">CU</span>
+          </div>
+          <div class="cuims-logo-text">
+            <div class="ims-title">IMS</div>
+            <div class="ims-sub-1">CHANDIGARH UNIVERSITY</div>
+            <div class="ims-sub-2">INFORMATION MANAGEMENT SYSTEM</div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Horizontal Cards Section (straddles white and red backgrounds) -->
+      <section class="cards-outer-wrapper">
+        <div class="cards-grid-container">
+          
+          <!-- Card 1: Student/Parent Login (Active Functional Demo) -->
+          <article class="login-card" id="card-student-parent">
+            <div class="card-icon-wrap">
+              <!-- Black Student/User silhouette icon -->
+              <svg class="card-icon" viewBox="0 0 24 24" fill="currentColor" width="38" height="38">
+                <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/>
+              </svg>
+            </div>
+            <h2 class="card-title">Student/Parent Login</h2>
+            <p class="card-description">
+              Login with your UID and Password to access your Student Services and Account. The CUIMS will keep a record of your progress and keep you apprised of the latest updates.
+            </p>
+            <div class="card-action">
+              <button type="button" class="btn-login-red" id="btn-open-student-login">Login Now</button>
+            </div>
+          </article>
+
+          <!-- Card 2: LMS Login -->
+          <article class="login-card" id="card-lms">
+            <div class="card-icon-wrap">
+              <!-- CULMS Cap Badge icon -->
+              <svg class="card-icon" viewBox="0 0 54 44" fill="none" width="50" height="40">
+                <!-- Mortarboard cap -->
+                <path d="M27 2L6 11L27 20L48 11L27 2Z" fill="#111"/>
+                <path d="M13 15V22C13 26 19.5 29 27 29C34.5 29 41 26 41 22V15" stroke="#111" stroke-width="2.5" stroke-linecap="round"/>
+                <path d="M44 13V24" stroke="#111" stroke-width="2" stroke-linecap="round"/>
+                <circle cx="44" cy="25" r="2" fill="#111"/>
+                <!-- Rounded box with CULMS text -->
+                <rect x="5" y="18" width="44" height="23" rx="7" stroke="#111" stroke-width="2.5" fill="none"/>
+                <text x="27" y="34" font-family="'Open Sans', sans-serif" font-weight="800" font-size="9" fill="#111" text-anchor="middle" letter-spacing="0.5">CULMS</text>
+              </svg>
+            </div>
+            <h2 class="card-title">LMS Login</h2>
+            <p class="card-description">
+              Login to your LMS using your UID/EmployeeID and CUIMS password. In case you face any login issues, then reset your CUIMS Password and wait for 20 minutes to proceed.
+            </p>
+            <div class="card-action">
+              <button type="button" class="btn-login-red btn-demo-only" data-target="LMS">Login Now</button>
+            </div>
+          </article>
+
+          <!-- Card 3: Staff Login -->
+          <article class="login-card" id="card-staff">
+            <div class="card-icon-wrap">
+              <!-- Staff Woman Professional Silhouette icon -->
+              <svg class="card-icon" viewBox="0 0 40 40" fill="currentColor" width="40" height="40">
+                <!-- Head with professional hair -->
+                <circle cx="20" cy="9.5" r="5"/>
+                <!-- Hair side curls -->
+                <path d="M13.5 10C13 14 14.5 18 16 19C15 16 15 12 17 8.5C18.5 7 21.5 7 23 8.5C25 12 25 16 24 19C25.5 18 27 14 26.5 10C26 5.5 14 5.5 13.5 10Z"/>
+                <!-- Torso with business collar & lapels -->
+                <path d="M10 33C10 26 14.5 22 20 22C25.5 22 30 26 30 33H10Z"/>
+                <!-- Lapel / tie detail -->
+                <path d="M19 22L17.5 28L20 32L22.5 28L21 22Z" fill="#ffffff"/>
+                <path d="M19 23L20 28L21 23Z" fill="#111"/>
+              </svg>
+            </div>
+            <h2 class="card-title">Staff Login</h2>
+            <p class="card-description">
+              Login using your Employee Code and Password to access your account, keep track of your progress and other official services.
+            </p>
+            <div class="card-action">
+              <button type="button" class="btn-login-red btn-demo-only" data-target="Staff">Login Now</button>
+            </div>
+          </article>
+
+          <!-- Card 4: Admission Login -->
+          <article class="login-card" id="card-admission">
+            <div class="card-icon-wrap">
+              <!-- Admission Reception Desk icon -->
+              <svg class="card-icon" viewBox="0 0 42 40" fill="currentColor" width="42" height="40">
+                <!-- Staff head -->
+                <circle cx="16" cy="9" r="4"/>
+                <!-- Staff upper body -->
+                <path d="M10 20C10 16 13 15 16 15C19 15 22 16 22 20H10Z"/>
+                <!-- Computer monitor -->
+                <rect x="23" y="11" width="8" height="6" rx="1"/>
+                <line x1="27" y1="17" x2="27" y2="20" stroke="currentColor" stroke-width="2"/>
+                <!-- Counter desk -->
+                <rect x="6" y="20" width="30" height="4" rx="1"/>
+                <rect x="8" y="24" width="26" height="11"/>
+                <line x1="8" y1="29" x2="34" y2="29" stroke="#ffffff" stroke-width="1.5"/>
+              </svg>
+            </div>
+            <h2 class="card-title">Admission Login</h2>
+            <p class="card-description">
+              For Admission Staff only. Use your Employee Code and Password to log in for admission related services.
+            </p>
+            <div class="card-action">
+              <button type="button" class="btn-login-red btn-demo-only" data-target="Admission">Login Now</button>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- Bottom Weather Strip (Solid Red Background) -->
+      <footer class="login-weather-strip">
+        <div class="weather-strip-inner">
+          
+          <!-- Current Weather City Info -->
+          <div class="weather-current-city">
+            <div class="weather-city-label">
+              <span>GHARUAN</span>
+              <span>WEATHER</span>
+            </div>
+            <!-- Crescent Moon Icon -->
+            <div class="weather-icon-main">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="34" height="34">
+                <path d="M12.3 2a10 10 0 0 0-.19 14 10 10 0 0 0 11.63 2.18A10 10 0 1 1 12.3 2z"/>
+              </svg>
+            </div>
+            <div class="weather-temp-main">
+              <span class="temp-val">27°C</span>
+              <span class="temp-sky">clear sky</span>
+            </div>
+          </div>
+
+          <!-- Forecast 7-Day Columns -->
+          <div class="weather-forecast-list">
+            <!-- Friday -->
+            <div class="forecast-day-item">
+              <span class="forecast-day-name">Friday</span>
+              <div class="forecast-icon">
+                <!-- Sun icon -->
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22">
+                  <circle cx="12" cy="12" r="5" fill="currentColor"/>
+                  <line x1="12" y1="1" x2="12" y2="4"/>
+                  <line x1="12" y1="20" x2="12" y2="23"/>
+                  <line x1="4.22" y1="4.22" x2="6.34" y2="6.34"/>
+                  <line x1="17.66" y1="17.66" x2="19.78" y2="19.78"/>
+                  <line x1="1" y1="12" x2="4" y2="12"/>
+                  <line x1="20" y1="12" x2="23" y2="12"/>
+                  <line x1="4.22" y1="19.78" x2="6.34" y2="17.66"/>
+                  <line x1="17.66" y1="6.34" x2="19.78" y2="4.22"/>
+                </svg>
+              </div>
+              <div class="forecast-temps">
+                <span class="t-high">35°C</span>
+                <span class="t-low">23°C</span>
+              </div>
+            </div>
+
+            <!-- Saturday -->
+            <div class="forecast-day-item">
+              <span class="forecast-day-name">Saturday</span>
+              <div class="forecast-icon">
+                <!-- Cloud sun -->
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="22" height="22">
+                  <path d="M17.5 19H9a5 5 0 0 1-1.3-9.8A6.5 6.5 0 0 1 20 12.5a4 4 0 0 1-2.5 6.5z"/>
+                </svg>
+              </div>
+              <div class="forecast-temps">
+                <span class="t-high">34°C</span>
+                <span class="t-low">22°C</span>
+              </div>
+            </div>
+
+            <!-- Sunday -->
+            <div class="forecast-day-item">
+              <span class="forecast-day-name">Sunday</span>
+              <div class="forecast-icon">
+                <!-- Thunder rain -->
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="22" height="22">
+                  <path d="M19 14.5a3.5 3.5 0 0 0-1-6.8 5 5 0 0 0-9.6 1.4A4 4 0 0 0 6 17h11a3.5 3.5 0 0 0 2-2.5z"/>
+                  <path d="M13 14l-2 4h3l-2 4" stroke-width="1.5"/>
+                </svg>
+              </div>
+              <div class="forecast-temps">
+                <span class="t-high">33°C</span>
+                <span class="t-low">20°C</span>
+              </div>
+            </div>
+
+            <!-- Monday -->
+            <div class="forecast-day-item">
+              <span class="forecast-day-name">Monday</span>
+              <div class="forecast-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="22" height="22">
+                  <path d="M19 14.5a3.5 3.5 0 0 0-1-6.8 5 5 0 0 0-9.6 1.4A4 4 0 0 0 6 17h11a3.5 3.5 0 0 0 2-2.5z"/>
+                  <path d="M13 14l-2 4h3l-2 4" stroke-width="1.5"/>
+                </svg>
+              </div>
+              <div class="forecast-temps">
+                <span class="t-high">31°C</span>
+                <span class="t-low">18°C</span>
+              </div>
+            </div>
+
+            <!-- Tuesday -->
+            <div class="forecast-day-item">
+              <span class="forecast-day-name">Tuesday</span>
+              <div class="forecast-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="22" height="22">
+                  <path d="M19 14.5a3.5 3.5 0 0 0-1-6.8 5 5 0 0 0-9.6 1.4A4 4 0 0 0 6 17h11a3.5 3.5 0 0 0 2-2.5z"/>
+                  <path d="M13 14l-2 4h3l-2 4" stroke-width="1.5"/>
+                </svg>
+              </div>
+              <div class="forecast-temps">
+                <span class="t-high">35°C</span>
+                <span class="t-low">20°C</span>
+              </div>
+            </div>
+
+            <!-- Wednesday -->
+            <div class="forecast-day-item">
+              <span class="forecast-day-name">Wednesday</span>
+              <div class="forecast-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22">
+                  <circle cx="12" cy="12" r="5" fill="currentColor"/>
+                  <line x1="12" y1="1" x2="12" y2="4"/>
+                  <line x1="12" y1="20" x2="12" y2="23"/>
+                  <line x1="4.22" y1="4.22" x2="6.34" y2="6.34"/>
+                  <line x1="17.66" y1="17.66" x2="19.78" y2="19.78"/>
+                  <line x1="1" y1="12" x2="4" y2="12"/>
+                  <line x1="20" y1="12" x2="23" y2="12"/>
+                  <line x1="4.22" y1="19.78" x2="6.34" y2="17.66"/>
+                  <line x1="17.66" y1="6.34" x2="19.78" y2="4.22"/>
+                </svg>
+              </div>
+              <div class="forecast-temps">
+                <span class="t-high">38°C</span>
+                <span class="t-low">22°C</span>
+              </div>
+            </div>
+
+            <!-- Thursday -->
+            <div class="forecast-day-item">
+              <span class="forecast-day-name">Thursday</span>
+              <div class="forecast-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22">
+                  <circle cx="12" cy="12" r="5" fill="currentColor"/>
+                  <line x1="12" y1="1" x2="12" y2="4"/>
+                  <line x1="12" y1="20" x2="12" y2="23"/>
+                  <line x1="4.22" y1="4.22" x2="6.34" y2="6.34"/>
+                  <line x1="17.66" y1="17.66" x2="19.78" y2="19.78"/>
+                  <line x1="1" y1="12" x2="4" y2="12"/>
+                  <line x1="20" y1="12" x2="23" y2="12"/>
+                  <line x1="4.22" y1="19.78" x2="6.34" y2="17.66"/>
+                  <line x1="17.66" y1="6.34" x2="19.78" y2="4.22"/>
+                </svg>
+              </div>
+              <div class="forecast-temps">
+                <span class="t-high">38°C</span>
+                <span class="t-low">23°C</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </footer>
+    </div>
+  </main>
+
+  <!-- ========================================== -->
+  <!-- CUIMS STUDENT LOGIN OVERLAY / SCREEN       -->
+  <!-- ========================================== -->
+  <div id="login-modal-overlay" class="modal-overlay cuims-login-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="modal-heading">
+    <div class="cuims-login-card">
+      <button type="button" class="btn-modal-close" id="btn-close-modal" aria-label="Close dialog">&times;</button>
+      
+      <!-- CUIMS Logo with white text as in screenshot -->
+      <div class="cuims-brand-logo login-card-logo">
+        <div class="cuims-logo-mark">
+          <span class="cu-badge">CU</span>
+        </div>
+        <div class="cuims-logo-text white-text">
+          <div class="ims-title">IMS</div>
+          <div class="ims-sub-1">CHANDIGARH UNIVERSITY</div>
+          <div class="ims-sub-2">INFORMATION MANAGEMENT SYSTEM</div>
+        </div>
+      </div>
+
+      <h1 id="modal-heading" class="login-main-heading">Log in</h1>
+      
+      <p class="login-campus-subtitle">
+        Welcome to University Information<br>
+        Management System - <span class="highlight-campus-red">Mohali Campus</span>
+      </p>
+
+      <form id="student-login-form" class="cuims-auth-form" novalidate>
+        
+        <!-- STEP 1: User ID -->
+        <div id="step-uid-wrap" class="auth-step-panel">
+          <div class="cuims-input-group">
+            <input type="text" id="input-uid" name="uid" placeholder="Enter User Id" autocomplete="username" spellcheck="false" required>
+            <div class="input-right-icon">
+              <!-- User avatar silhouette in circle -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="22" height="22">
+                <circle cx="12" cy="12" r="10"/>
+                <circle cx="12" cy="9.5" r="3.5"/>
+                <path d="M6 18.2a7 7 0 0 1 12 0"/>
+              </svg>
+            </div>
+          </div>
+
+          <div id="uid-error-msg" class="auth-error-msg hidden" role="alert"></div>
+
+          <button type="button" class="btn-auth-red" id="btn-step-next">NEXT</button>
+
+          <div class="auth-divider-or">OR</div>
+
+          <button type="button" class="btn-auth-blue" id="btn-registration">CLICK HERE FOR REGISTRATION</button>
+        </div>
+
+        <!-- STEP 2: Password (appears after clicking NEXT) -->
+        <div id="step-password-wrap" class="auth-step-panel hidden">
+          <div class="active-user-badge">
+            <span class="badge-uid-label" id="badge-active-uid">26BCS12924</span>
+            <button type="button" class="btn-back-step" id="btn-back-uid" title="Switch User ID">Edit</button>
+          </div>
+
+          <div class="cuims-input-group">
+            <input type="password" id="input-password" name="password" placeholder="Enter Password" autocomplete="current-password" required>
+            <button type="button" id="btn-toggle-pwd" class="btn-toggle-password input-right-icon" aria-label="Toggle password visibility">
+              <svg id="eye-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                <circle cx="12" cy="12" r="3"/>
+              </svg>
+            </button>
+          </div>
+
+          <div id="pwd-error-msg" class="auth-error-msg hidden" role="alert"></div>
+
+          <button type="submit" class="btn-auth-red" id="btn-submit-login">LOG IN</button>
+          
+          <div class="auth-divider-or">OR</div>
+
+          <button type="button" class="btn-auth-blue" id="btn-registration-2">CLICK HERE FOR REGISTRATION</button>
+        </div>
+
+      </form>
+
+      <!-- App Store Badges -->
+      <div class="app-store-badges-row">
+        <!-- Google Play -->
+        <div class="app-badge-btn" role="button" tabindex="0">
+          <svg viewBox="0 0 24 24" width="22" height="22">
+            <path d="M3.6 1.8L13.8 12 3.6 22.2c-.4-.4-.6-1-.6-1.7V3.5c0-.7.2-1.3.6-1.7z" fill="#00C4FF"/>
+            <path d="M17.1 8.7L13.8 12l3.3 3.3 3.8-2.2c1.1-.6 1.1-1.6 0-2.2l-3.8-2.2z" fill="#FFD400"/>
+            <path d="M3.6 22.2l10.2-10.2 3.3 3.3-10.4 6c-.9.5-1.9.3-2.6-.3-.3-.2-.5-.5-.5-.8z" fill="#FF3333"/>
+            <path d="M3.6 1.8c.2-.3.5-.6.9-.7.7-.4 1.7-.3 2.6.2l10.4 6-3.3 3.3L3.6 1.8z" fill="#00E676"/>
+          </svg>
+          <div class="badge-text-wrap">
+            <span class="badge-micro">GET IT ON</span>
+            <span class="badge-brand">Google Play</span>
+          </div>
+        </div>
+
+        <!-- App Store -->
+        <div class="app-badge-btn" role="button" tabindex="0">
+          <svg viewBox="0 0 24 24" fill="#ffffff" width="22" height="22">
+            <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.63-.77 1.06-1.85.94-2.93-1 .04-2.14.67-2.8 1.44-.58.67-1.1 1.77-.96 2.82 1.12.09 2.2-.58 2.82-1.33z"/>
+          </svg>
+          <div class="badge-text-wrap">
+            <span class="badge-micro">Download on the</span>
+            <span class="badge-brand">App Store</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- SCREEN 2: STUDENT DASHBOARD                -->
+  <!-- ========================================== -->
+  <div id="screen-dashboard" class="screen-view hidden" aria-label="Student Dashboard">
+    
+    <!-- Top Navigation Bar -->
+    <header class="dashboard-navbar">
+      <div class="nav-left">
+        <!-- Hamburger Menu -->
+        <button type="button" class="nav-icon-btn hamburger-btn" aria-label="Toggle Sidebar Menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" width="22" height="22">
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <line x1="3" y1="12" x2="21" y2="12"/>
+            <line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+        </button>
+
+        <!-- CUIMS Logo in Nav -->
+        <div class="cuims-brand-logo nav-logo">
+          <div class="cuims-logo-mark nav-mark">
+            <span class="cu-badge">CU</span>
+          </div>
+          <div class="cuims-logo-text">
+            <div class="ims-title">IMS</div>
+            <div class="ims-sub-1">CHANDIGARH UNIVERSITY</div>
+            <div class="ims-sub-2">INFORMATION MANAGEMENT SYSTEM</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Search & Bookmark Bar -->
+      <div class="nav-center">
+        <div class="nav-search-bar">
+          <input type="text" placeholder="Search & Bookmark your page" aria-label="Search and Bookmark your page">
+          <button type="button" class="search-submit-btn" aria-label="Search">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2.2" width="16" height="16">
+              <circle cx="11" cy="11" r="8"/>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Right Utility Actions & User Profile -->
+      <div class="nav-right">
+        <!-- Notification Bell -->
+        <button type="button" class="nav-icon-btn" aria-label="Notifications" title="Notifications">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+          </svg>
+        </button>
+
+        <!-- Bookmarks / Open Book -->
+        <button type="button" class="nav-icon-btn" aria-label="Bookmarks" title="Bookmarks">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+          </svg>
+        </button>
+
+        <!-- Home -->
+        <button type="button" class="nav-icon-btn" aria-label="Home" title="Home">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+            <polyline points="9 22 9 12 15 12 15 22"/>
+          </svg>
+        </button>
+
+        <!-- Settings -->
+        <button type="button" class="nav-icon-btn" aria-label="Settings" title="Settings">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+            <circle cx="12" cy="12" r="3"/>
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+          </svg>
+        </button>
+
+        <!-- User Profile Area -->
+        <div class="user-profile-cluster" id="user-profile-cluster">
+          <div class="user-text-info">
+            <span class="user-name">AMUL</span>
+            <span class="user-uid" id="display-dashboard-uid">26BCS12924</span>
+          </div>
+          <div class="user-avatar-wrap" id="btn-open-profile" title="My Profile" style="cursor:pointer;">
+            <img src="assets/amul_avatar.png?v=3" alt="Student Profile Avatar" class="user-avatar-img">
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="dashboard-main-layout">
+      <!-- Left Side Navigation Drawer -->
+      <aside class="sidebar-drawer" id="sidebar-drawer" aria-label="Navigation Drawer">
+        <nav class="sidebar-nav">
+          <ul class="sidebar-menu">
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link" id="sidebar-link-academics">
+                <span class="sidebar-link-text">Academics</span>
+                <svg class="sidebar-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="9 18 15 12 9 6"/></svg>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link">
+                <span class="sidebar-link-text">Accounts</span>
+                <svg class="sidebar-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="9 18 15 12 9 6"/></svg>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link">
+                <span class="sidebar-link-text">Administration</span>
+                <svg class="sidebar-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="9 18 15 12 9 6"/></svg>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link">
+                <span class="sidebar-link-text">Apply for Loan Documents</span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link">
+                <span class="sidebar-link-text">Apply for NOC</span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link">
+                <span class="sidebar-link-text">Apply Internship NOC</span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link">
+                <span class="sidebar-link-text">Centre For Student Wellbeing (CSW)</span>
+                <svg class="sidebar-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="9 18 15 12 9 6"/></svg>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link">
+                <span class="sidebar-link-text">Counseling Therapy Clinic Registration</span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link">
+                <span class="sidebar-link-text">DCPD</span>
+                <svg class="sidebar-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="9 18 15 12 9 6"/></svg>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link">
+                <span class="sidebar-link-text">DLL MOOC Coordinator List</span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link">
+                <span class="sidebar-link-text">E Library</span>
+                <svg class="sidebar-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="9 18 15 12 9 6"/></svg>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link">
+                <span class="sidebar-link-text">Examination</span>
+                <svg class="sidebar-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="9 18 15 12 9 6"/></svg>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link">
+                <span class="sidebar-link-text">Hostel</span>
+                <svg class="sidebar-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="9 18 15 12 9 6"/></svg>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link">
+                <span class="sidebar-link-text">Hostel Leave</span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link">
+                <span class="sidebar-link-text">International Student Coordination Cell</span>
+                <svg class="sidebar-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="9 18 15 12 9 6"/></svg>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link">
+                <span class="sidebar-link-text">Placement</span>
+                <svg class="sidebar-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="9 18 15 12 9 6"/></svg>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link">
+                <span class="sidebar-link-text">Student Welfare</span>
+                <svg class="sidebar-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="9 18 15 12 9 6"/></svg>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link">
+                <span class="sidebar-link-text">Feedback</span>
+                <svg class="sidebar-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="9 18 15 12 9 6"/></svg>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- Mobile Backdrop -->
+      <div class="sidebar-backdrop"></div>
+
+      <!-- Main Dashboard Body Content -->
+      <main class="dashboard-body">
+      <div class="dashboard-container">
+        
+        <!-- Row 1: Top 5 Quick Action Cards -->
+        <section class="quick-cards-row" aria-label="Quick Action Cards">
+          
+          <!-- Card 1: Important Links -->
+          <div class="dash-quick-card">
+            <div class="quick-card-left">
+              <span class="quick-title">Important Links</span>
+              <span class="quick-subtitle">CLICK HERE</span>
+            </div>
+            <div class="quick-card-right">
+              <div class="quick-icon-box icon-blue">
+                <!-- Browser/window icon -->
+                <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" width="22" height="22">
+                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                  <line x1="8" y1="21" x2="16" y2="21"/>
+                  <line x1="12" y1="17" x2="12" y2="21"/>
+                  <circle cx="5" cy="6" r="0.8" fill="#2563eb"/>
+                  <circle cx="8" cy="6" r="0.8" fill="#2563eb"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Student Facilitation -->
+          <div class="dash-quick-card">
+            <div class="quick-card-left">
+              <span class="quick-title">Student Facilitation</span>
+              <span class="quick-subtitle">CLICK TO VIEW</span>
+            </div>
+            <div class="quick-card-right">
+              <div class="quick-icon-box icon-purple">
+                <!-- Video play icon -->
+                <svg viewBox="0 0 24 24" fill="none" stroke="#9333ea" stroke-width="2" width="22" height="22">
+                  <circle cx="12" cy="12" r="10"/>
+                  <polygon points="10 8 16 12 10 16 10 8" fill="#9333ea"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: Anti Ragging -->
+          <div class="dash-quick-card">
+            <div class="quick-card-left">
+              <span class="quick-title">Anti Ragging</span>
+              <span class="quick-subtitle">READ NOW</span>
+            </div>
+            <div class="quick-card-right">
+              <div class="quick-icon-box icon-indigo">
+                <!-- Shield/X icon -->
+                <svg viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="2" width="22" height="22">
+                  <circle cx="12" cy="12" r="10"/>
+                  <line x1="15" y1="9" x2="9" y2="15"/>
+                  <line x1="9" y1="9" x2="15" y2="15"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4: CU LMS (Highlighted Teal Card with Neon Green Border) -->
+          <div class="dash-quick-card highlighted-lms-card">
+            <div class="quick-card-left">
+              <span class="quick-title lms-white-text">CU LMS</span>
+              <span class="quick-subtitle lms-white-sub">CLICK HERE</span>
+            </div>
+            <div class="quick-card-right">
+              <div class="quick-icon-box icon-transparent">
+                <!-- White graduation cap -->
+                <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" width="28" height="28">
+                  <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                  <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 5: My University Email -->
+          <div class="dash-quick-card">
+            <div class="quick-card-left">
+              <span class="quick-title">My University Email</span>
+              <span class="quick-subtitle">VIEW DETAILS</span>
+            </div>
+            <div class="quick-card-right">
+              <div class="quick-icon-box icon-blue">
+                <!-- Mail icon -->
+                <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" width="22" height="22">
+                  <rect x="2" y="4" width="20" height="16" rx="2"/>
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+        </section>
+
+        <!-- Row 2: Secondary Bar (Weather Strip & Download Virtual ID Card) -->
+        <section class="secondary-row" aria-label="Weather and Virtual ID">
+          
+          <!-- Left: Chandigarh University Weather Card -->
+          <div class="weather-dashboard-card">
+            <div class="cu-weather-left">
+              <div class="weather-dash-labels">
+                <span class="weather-dash-title">CHANDIGARH UNIVERSITY</span>
+                <span class="weather-dash-sub">WEATHER</span>
+              </div>
+              <div class="weather-dash-moon">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="30" height="30">
+                  <path d="M12.3 2a10 10 0 0 0-.19 14 10 10 0 0 0 11.63 2.18A10 10 0 1 1 12.3 2z"/>
+                </svg>
+              </div>
+              <div class="weather-dash-temp">
+                <span class="temp-degree">27°C</span>
+                <span class="temp-condition">clear sky</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Download Virtual ID Card -->
+          <div class="virtual-id-card">
+            <div class="virtual-id-text">
+              <h3>Download Virtual ID Card</h3>
+            </div>
+            <div class="virtual-id-btn-wrap">
+              <button type="button" class="btn-download-virtual" id="btn-download-id">Download Now</button>
+            </div>
+          </div>
+
+        </section>
+
+        <!-- Row 3: Main 3-Column Content Layout -->
+        <section class="main-columns-grid">
+          
+          <!-- Column 1: Important Message -->
+          <div class="dash-panel card-important-message">
+            <div class="panel-header">
+              <h2 class="panel-title">Important Message</h2>
+            </div>
+            <div class="panel-body">
+              <div class="message-inner-box">
+                <p>
+                  <strong>1. Pending Documents:</strong> The status of Pending documents is as given below, you are required to submit the same in Block-B1 (Room No. 208(General category) and Room No. 204(Scholarship stds.)<br>
+                  <span class="text-muted">(Abbreviation: MIG: Migration, CHAR/ CHR: Character, DIP: Diploma, ORG: Original)</span>
+                </p>
+                <div class="document-remarks">
+                  <span class="remarks-label">Document Remarks:</span>
+                  <span class="remarks-status">NO DOCUMENTS PENDING</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Column 2: My Course & Attendance -->
+          <div class="dash-panel card-course-attendance">
+            <div class="panel-header">
+              <h2 class="panel-title">My Course & Attendance</h2>
+            </div>
+            <div class="panel-body">
+              <div class="course-program-title">
+                Bachelor of Engineering (Computer Science and Engineering)-CS201
+              </div>
+              
+              <div class="table-responsive">
+                <table class="attendance-table">
+                  <thead>
+                    <tr>
+                      <th class="th-subject">Subject</th>
+                      <th class="th-sem">Sem.</th>
+                      <th class="th-perc">%</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="td-subject">Advanced Data Structures (25CSH-202)</td>
+                      <td class="td-sem">1</td>
+                      <td class="td-perc">89.8</td>
+                    </tr>
+                    <tr>
+                      <td class="td-subject">Database Management System (25CSH-204)</td>
+                      <td class="td-sem">1</td>
+                      <td class="td-perc">97.73</td>
+                    </tr>
+                    <tr>
+                      <td class="td-subject">Object Oriented Programming (25CSH-208)</td>
+                      <td class="td-sem">1</td>
+                      <td class="td-perc">93.48</td>
+                    </tr>
+                    <tr>
+                      <td class="td-subject">Computer Organization and Architecture (25CST-201)</td>
+                      <td class="td-sem">1</td>
+                      <td class="td-perc">92.31</td>
+                    </tr>
+                    <tr>
+                      <td class="td-subject">Entrepreneurship Mindset (25INT-221)</td>
+                      <td class="td-sem">1</td>
+                      <td class="td-perc">90</td>
+                    </tr>
+                    <tr>
+                      <td class="td-subject">Critical Enquiry and Research Methodology (25RST-231)</td>
+                      <td class="td-sem">1</td>
+                      <td class="td-perc">100</td>
+                    </tr>
+                    <tr>
+                      <td class="td-subject">Probability and Statistics (25SMH-241)</td>
+                      <td class="td-sem">1</td>
+                      <td class="td-perc">86.05</td>
+                    </tr>
+                    <tr>
+                      <td class="td-subject">SOFT SKILLS - I (25TDP-211)</td>
+                      <td class="td-sem">1</td>
+                      <td class="td-perc">90</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- Column 3: Announcements ( ALL ) -->
+          <div class="dash-panel card-announcements">
+            <div class="panel-header announcements-header">
+              <h2 class="panel-title">Announcements ( ALL )</h2>
+            </div>
+            
+            <div class="panel-body announcements-body">
+              
+              <!-- Search & Filter Controls -->
+              <div class="announcement-controls">
+                <div class="announcement-search">
+                  <input type="text" placeholder="Search Announcement">
+                  <button type="button" aria-label="Search announcements">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2" width="14" height="14">
+                      <circle cx="11" cy="11" r="8"/>
+                      <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                    </svg>
+                  </button>
+                </div>
+                <div class="announcement-dropdown">
+                  <select aria-label="Filter announcement categories">
+                    <option value="ALL">ALL</option>
+                    <option value="ACADEMIC">ACADEMIC</option>
+                    <option value="EXAMINATION">EXAMINATION</option>
+                    <option value="EVENTS">EVENTS</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Announcement Detail Box -->
+              <article class="announcement-notice-card">
+                <div class="notice-title-row">
+                  <span class="pin-icon" aria-hidden="true">📌</span>
+                  <h3 class="notice-title">AUDITIONS- PUNJAB STATE YOUTH FESTIVAL 2026</h3>
+                </div>
+
+                <div class="notice-meta-tags">
+                  <span class="meta-tag date-tag">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12">
+                      <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                      <line x1="16" y1="2" x2="16" y2="6"/>
+                      <line x1="8" y1="2" x2="8" y2="6"/>
+                      <line x1="3" y1="10" x2="21" y2="10"/>
+                    </svg>
+                    23 SEP 2026
+                  </span>
+                  <span class="meta-tag time-tag">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12">
+                      <circle cx="12" cy="12" r="10"/>
+                      <polyline points="12 6 12 12 16 14"/>
+                    </svg>
+                    15:15:15
+                  </span>
+                </div>
+
+                <div class="notice-text-content">
+                  <p>
+                    This is to inform all students that the Department of Art and Cultural Affairs (DACA) is organizing auditions for participation in the <strong>State Level Inter-Varsity Youth Festival 2026</strong>. Students with talent and interest in Music, Theatre, Dance, Literary and Fine Arts are invited to participate in the auditions. The auditions will provide an opportunity to showcase talent and represent the University at the Punjab State Youth Festival.
+                  </p>
+                  <p class="notice-schedule-note">
+                    Auditions will be conducted on <strong>28th and 29th September 2026</strong>, from <strong>4:00 PM onwards</strong>.<br>
+                    <strong>Venue:</strong> Academic Block B5, Ground Floor
+                  </p>
+                  <div class="notice-schedule-heading">Audition Schedule</div>
+
+                  <div class="table-responsive schedule-table-wrap">
+                    <table class="schedule-table">
+                      <thead>
+                        <tr>
+                          <th>Sr. No.</th>
+                          <th>Category</th>
+                          <th>Room number</th>
+                          <th>Time</th>
+                          <th>Incharge name</th>
+                          <th>Contact details</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>1</td>
+                          <td>Music (Vocal &amp; Inst.)</td>
+                          <td>102</td>
+                          <td>4:00 PM</td>
+                          <td>Dr. R. Sharma</td>
+                          <td>ext-4201</td>
+                        </tr>
+                        <tr>
+                          <td>2</td>
+                          <td>Dance (Folk &amp; Classical)</td>
+                          <td>105</td>
+                          <td>4:30 PM</td>
+                          <td>Prof. S. Kaur</td>
+                          <td>ext-4208</td>
+                        </tr>
+                        <tr>
+                          <td>3</td>
+                          <td>Theatre &amp; Skit</td>
+                          <td>108</td>
+                          <td>5:00 PM</td>
+                          <td>Dr. V. Verma</td>
+                          <td>ext-4215</td>
+                        </tr>
+                        <tr>
+                          <td>4</td>
+                          <td>Fine Arts &amp; Literary</td>
+                          <td>110</td>
+                          <td>5:00 PM</td>
+                          <td>Prof. A. Mehta</td>
+                          <td>ext-4220</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </article>
+
+            </div>
+          </div>
+
+        </section>
+
+      </div>
+    </main>
+  </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- SCREEN 3: MY PROFILE                       -->
+  <!-- ========================================== -->
+  <div id="screen-profile" class="screen-view hidden" aria-label="My Profile Screen">
+
+    <!-- Top Navigation Bar (same as dashboard) -->
+    <header class="dashboard-navbar">
+      <div class="nav-left">
+        <button type="button" class="nav-icon-btn hamburger-btn" aria-label="Toggle Sidebar Menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" width="22" height="22">
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <line x1="3" y1="12" x2="21" y2="12"/>
+            <line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+        </button>
+        <div class="cuims-brand-logo nav-logo">
+          <div class="cuims-logo-mark nav-mark">
+            <span class="cu-badge">CU</span>
+          </div>
+          <div class="cuims-logo-text">
+            <div class="ims-title">IMS</div>
+            <div class="ims-sub-1">CHANDIGARH UNIVERSITY</div>
+            <div class="ims-sub-2">INFORMATION MANAGEMENT SYSTEM</div>
+          </div>
+        </div>
+      </div>
+      <div class="nav-center">
+        <div class="nav-search-bar">
+          <input type="text" placeholder="Search &amp; Bookmark your page" aria-label="Search and Bookmark your page">
+          <button type="button" class="search-submit-btn" aria-label="Search">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2.2" width="16" height="16">
+              <circle cx="11" cy="11" r="8"/>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="nav-right">
+        <button type="button" class="nav-icon-btn" aria-label="Notifications" title="Notifications">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+          </svg>
+        </button>
+        <button type="button" class="nav-icon-btn" aria-label="Bookmarks" title="Bookmarks">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+          </svg>
+        </button>
+        <button type="button" class="nav-icon-btn" aria-label="Home" title="Home">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+            <polyline points="9 22 9 12 15 12 15 22"/>
+          </svg>
+        </button>
+        <button type="button" class="nav-icon-btn" aria-label="Settings" title="Settings">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+            <circle cx="12" cy="12" r="3"/>
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+          </svg>
+        </button>
+        <div class="user-profile-cluster">
+          <div class="user-text-info">
+            <span class="user-name">AMUL</span>
+            <span class="user-uid">26BCS12924</span>
+          </div>
+          <div class="user-avatar-wrap" id="btn-back-to-dashboard" title="Back to Dashboard" style="cursor:pointer;">
+            <img src="assets/amul_avatar.png?v=3" alt="Student Profile Avatar" class="user-avatar-img">
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="dashboard-main-layout">
+      <!-- Left Side Navigation Drawer -->
+      <aside class="sidebar-drawer" id="sidebar-drawer-profile" aria-label="Profile Navigation Drawer">
+        <nav class="sidebar-nav">
+          <ul class="sidebar-menu">
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link">
+                <span class="sidebar-link-text">Academics</span>
+                <svg class="sidebar-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="9 18 15 12 9 6"/></svg>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link">
+                <span class="sidebar-link-text">Accounts</span>
+                <svg class="sidebar-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="9 18 15 12 9 6"/></svg>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link">
+                <span class="sidebar-link-text">Administration</span>
+                <svg class="sidebar-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="9 18 15 12 9 6"/></svg>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link">
+                <span class="sidebar-link-text">Apply for Loan Documents</span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link">
+                <span class="sidebar-link-text">Apply for NOC</span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link">
+                <span class="sidebar-link-text">Apply Internship NOC</span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link">
+                <span class="sidebar-link-text">Centre For Student Wellbeing (CSW)</span>
+                <svg class="sidebar-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="9 18 15 12 9 6"/></svg>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link">
+                <span class="sidebar-link-text">Counseling Therapy Clinic Registration</span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link">
+                <span class="sidebar-link-text">DCPD</span>
+                <svg class="sidebar-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="9 18 15 12 9 6"/></svg>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link">
+                <span class="sidebar-link-text">DLL MOOC Coordinator List</span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link">
+                <span class="sidebar-link-text">E Library</span>
+                <svg class="sidebar-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="9 18 15 12 9 6"/></svg>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link">
+                <span class="sidebar-link-text">Examination</span>
+                <svg class="sidebar-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="9 18 15 12 9 6"/></svg>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link">
+                <span class="sidebar-link-text">Hostel</span>
+                <svg class="sidebar-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="9 18 15 12 9 6"/></svg>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link">
+                <span class="sidebar-link-text">Hostel Leave</span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link">
+                <span class="sidebar-link-text">International Student Coordination Cell</span>
+                <svg class="sidebar-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="9 18 15 12 9 6"/></svg>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link">
+                <span class="sidebar-link-text">Placement</span>
+                <svg class="sidebar-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="9 18 15 12 9 6"/></svg>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link">
+                <span class="sidebar-link-text">Student Welfare</span>
+                <svg class="sidebar-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="9 18 15 12 9 6"/></svg>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link">
+                <span class="sidebar-link-text">Feedback</span>
+                <svg class="sidebar-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="9 18 15 12 9 6"/></svg>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- Mobile Backdrop -->
+      <div class="sidebar-backdrop"></div>
+
+      <!-- Profile Content -->
+      <main class="dashboard-body">
+      <div class="dashboard-container profile-page-container">
+
+        <!-- My Profile Title Bar -->
+        <div class="profile-title-bar">
+          <h1 class="profile-page-title">My Profile</h1>
+        </div>
+
+        <!-- Student Personal Information Section -->
+        <div class="profile-section-card">
+          <div class="profile-section-header">STUDENT PERSONAL INFORMATION</div>
+          <div class="profile-info-body">
+            <div class="profile-info-grid">
+              <div class="profile-info-left">
+                <div class="profile-info-row"><span class="pinfo-label">UID</span><span class="pinfo-value">26BCS12924</span></div>
+                <div class="profile-info-row"><span class="pinfo-label">Name</span><span class="pinfo-value">AMUL KUMAR KUSHVAHA</span></div>
+                <div class="profile-info-row"><span class="pinfo-label">Father's Name</span><span class="pinfo-value">SANJAY PRASAD</span></div>
+                <div class="profile-info-row"><span class="pinfo-label">Mother Name</span><span class="pinfo-value">SANGITA DEVI</span></div>
+                <div class="profile-info-row"><span class="pinfo-label">Religion</span><span class="pinfo-value">Hinduism</span></div>
+                <div class="profile-info-row"><span class="pinfo-label">D.O.B.</span><span class="pinfo-value">06 Feb 2007</span></div>
+                <div class="profile-info-row"><span class="pinfo-label">Admission Year</span><span class="pinfo-value">2026</span></div>
+                <div class="profile-info-row"><span class="pinfo-label">University</span><span class="pinfo-value">CU</span></div>
+              </div>
+              <div class="profile-info-right">
+                <div class="profile-info-row"><span class="pinfo-label">Current Semester</span><span class="pinfo-value pinfo-blue">1</span></div>
+                <div class="profile-info-row"><span class="pinfo-label">Blood Group</span><span class="pinfo-value">O+</span></div>
+                <div class="profile-info-row"><span class="pinfo-label">Current Section</span><span class="pinfo-value">26BCS-808</span></div>
+                <div class="profile-info-row"><span class="pinfo-label">Program Code</span><span class="pinfo-value pinfo-blue">CS201:B.E. (CSE)</span></div>
+                <div class="profile-info-row"><span class="pinfo-label">Student Status</span><span class="pinfo-value">A</span></div>
+                <div class="profile-info-row"><span class="pinfo-label">Cast</span><span class="pinfo-value">OBC</span></div>
+                <div class="profile-info-row"><span class="pinfo-label">Address</span><span class="pinfo-value">C O SANJAY PRASAD MANGALPUR GADARIA WEST CHAMPARAN BIHAR</span></div>
+              </div>
+              <div class="profile-photo-wrap">
+                <img src="assets/amul_avatar.png?v=3" alt="Amul Kumar Kushvaha" class="profile-student-photo">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Qualification Details Section -->
+        <div class="profile-section-card" style="margin-top: 18px;">
+          <div class="profile-section-header">QUALIFICATION DETAILS</div>
+          <div class="profile-qual-table-wrap">
+            <table class="profile-qual-table">
+              <thead>
+                <tr>
+                  <th>Qualification</th>
+                  <th>Stream</th>
+                  <th>Collage School Institute</th>
+                  <th>University Board</th>
+                  <th>Passing Year</th>
+                  <th>Percent Marks</th>
+                  <th>Remarks</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>10th</td>
+                  <td>General</td>
+                  <td>BHARTIYA INTER COLLEGE</td>
+                  <td>BIHAR SCHOOL EXAMINATION BOARD</td>
+                  <td>2023</td>
+                  <td>88</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>10+2</td>
+                  <td>NON-MEDICAL</td>
+                  <td>MJK COLLEGE</td>
+                  <td>BIHAR SCHOOL EXAMINATION BOARD</td>
+                  <td>2025</td>
+                  <td>77</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- SCREEN: ACADEMICS                          -->
+  <!-- ========================================== -->
+  <div id="screen-academics" class="screen-view hidden" aria-label="Academics Screen">
+
+    <!-- Top Navigation Bar (same as dashboard) -->
+    <header class="dashboard-navbar">
+      <div class="nav-left">
+        <button type="button" class="nav-icon-btn hamburger-btn" aria-label="Toggle Sidebar Menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" width="22" height="22">
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <line x1="3" y1="12" x2="21" y2="12"/>
+            <line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+        </button>
+        <div class="cuims-brand-logo nav-logo">
+          <div class="cuims-logo-mark nav-mark"><span class="cu-badge">CU</span></div>
+          <div class="cuims-logo-text">
+            <div class="ims-title">IMS</div>
+            <div class="ims-sub-1">CHANDIGARH UNIVERSITY</div>
+            <div class="ims-sub-2">INFORMATION MANAGEMENT SYSTEM</div>
+          </div>
+        </div>
+      </div>
+      <div class="nav-right">
+        <button type="button" class="nav-icon-btn" aria-label="Notifications" title="Notifications">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+          </svg>
+        </button>
+        <button type="button" class="nav-icon-btn" aria-label="Home" title="Home" id="btn-academics-home">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+            <polyline points="9 22 9 12 15 12 15 22"/>
+          </svg>
+        </button>
+        <div class="user-profile-cluster">
+          <div class="user-text-info">
+            <span class="user-name">AMUL</span>
+            <span class="user-uid">26BCS12924</span>
+          </div>
+          <div class="user-avatar-wrap" style="cursor:pointer;">
+            <img src="assets/amul_avatar.png?v=3" alt="Student Profile Avatar" class="user-avatar-img">
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="dashboard-main-layout" id="academics-main-layout">
+      <!-- Sidebar Drawer -->
+      <aside class="sidebar-drawer" aria-label="Navigation Drawer">
+        <nav class="sidebar-nav">
+          <ul class="sidebar-menu">
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link" id="sidebar-link-academics-2">
+                <span class="sidebar-link-text">Academics</span>
+                <svg class="sidebar-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="9 18 15 12 9 6"/></svg>
+              </a>
+            </li>
+            <li class="sidebar-item"><a href="#" class="sidebar-link"><span class="sidebar-link-text">Accounts</span><svg class="sidebar-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="9 18 15 12 9 6"/></svg></a></li>
+            <li class="sidebar-item"><a href="#" class="sidebar-link"><span class="sidebar-link-text">Administration</span><svg class="sidebar-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="9 18 15 12 9 6"/></svg></a></li>
+            <li class="sidebar-item"><a href="#" class="sidebar-link"><span class="sidebar-link-text">Apply for Loan Documents</span></a></li>
+            <li class="sidebar-item"><a href="#" class="sidebar-link"><span class="sidebar-link-text">Apply for NOC</span></a></li>
+            <li class="sidebar-item"><a href="#" class="sidebar-link"><span class="sidebar-link-text">Examination</span><svg class="sidebar-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="9 18 15 12 9 6"/></svg></a></li>
+            <li class="sidebar-item"><a href="#" class="sidebar-link"><span class="sidebar-link-text">Hostel</span><svg class="sidebar-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="9 18 15 12 9 6"/></svg></a></li>
+            <li class="sidebar-item"><a href="#" class="sidebar-link"><span class="sidebar-link-text">Placement</span><svg class="sidebar-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="9 18 15 12 9 6"/></svg></a></li>
+            <li class="sidebar-item"><a href="#" class="sidebar-link"><span class="sidebar-link-text">Feedback</span><svg class="sidebar-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="9 18 15 12 9 6"/></svg></a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- Mobile Backdrop -->
+      <div class="sidebar-backdrop"></div>
+
+      <!-- Academics Body Content -->
+      <main class="dashboard-body">
+        <div class="academics-content-wrapper">
+          <img
+            src="assets/academics_attendance.png"
+            alt="Academics Attendance Report"
+            class="academics-image-display"
+            id="academics-img"
+          />
+        </div>
+      </main>
+    </div>
+
+  </div>
+
+  <!-- jsPDF for direct image-to-PDF download -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+  <script>
+    (function() {
+      function setupDownloadBtn() {
+        var btn = document.getElementById('btn-download-id');
+        if (!btn) return;
+
+        btn.addEventListener('click', function() {
+          // Load the exact ID card image provided by the user
+          var img = new Image();
+          img.crossOrigin = 'anonymous';
+          img.onload = function() {
+            var imgW = img.naturalWidth;
+            var imgH = img.naturalHeight;
+
+            // Create PDF page sized exactly to the image proportions (in mm at 96dpi)
+            // Convert pixels to mm: 1px = 0.264583 mm
+            var pxToMm = 0.264583;
+            var pdfW = imgW * pxToMm;
+            var pdfH = imgH * pxToMm;
+
+            // Create a canvas to get the image data
+            var canvas = document.createElement('canvas');
+            canvas.width  = imgW;
+            canvas.height = imgH;
+            var ctx = canvas.getContext('2d');
+            ctx.drawImage(img, 0, 0);
+            var imgData = canvas.toDataURL('image/jpeg', 1.0);
+
+            // Build PDF with exact card dimensions
+            var orientation = imgW > imgH ? 'landscape' : 'portrait';
+            var pdf = new window.jspdf.jsPDF({
+              orientation: orientation,
+              unit: 'mm',
+              format: [pdfW, pdfH]
+            });
+            pdf.addImage(imgData, 'JPEG', 0, 0, pdfW, pdfH);
+            pdf.save('Virtual_ID_Card_26BCS12924.pdf');
+          };
+
+          img.onerror = function() {
+            alert('ID card image not found. Please ensure assets/virtual_id_card.jpg exists.');
+          };
+
+          // Load the actual ID card image from assets
+          img.src = 'assets/virtual_id_card.jpg?v=' + Date.now();
+        });
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', setupDownloadBtn);
+      } else {
+        setupDownloadBtn();
+      }
+    })();
+  </script>
+
+  <script src="app.js"></script>
+</body>
+</html>

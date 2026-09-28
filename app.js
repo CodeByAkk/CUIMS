@@ -9,13 +9,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const screenLogin     = document.getElementById('screen-login');
   const screenDashboard = document.getElementById('screen-dashboard');
   const screenProfile   = document.getElementById('screen-profile');
-  const screenAcademics = document.getElementById('screen-academics');
 
   const allScreens = {
     login:     screenLogin,
     dashboard: screenDashboard,
-    profile:   screenProfile,
-    academics: screenAcademics
+    profile:   screenProfile
   };
 
   // ── History / Screen Navigation ──────────────────────────
@@ -55,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // On first load, set the initial history state
   const initialHash = location.hash.replace('#', '') || 'login';
-  const validScreens = ['login', 'dashboard', 'profile', 'academics'];
+  const validScreens = ['login', 'dashboard', 'profile'];
   const startScreen = validScreens.includes(initialHash) ? initialHash : 'login';
   history.replaceState({ screen: startScreen }, '', `#${startScreen}`);
   showScreen(startScreen, false);
@@ -319,28 +317,5 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
-
-  // ─────────────────────────────────────────────────────────
-  // ACADEMICS SIDEBAR LINK → ACADEMICS SCREEN
-  // ─────────────────────────────────────────────────────────
-  const academicsLink  = document.getElementById('sidebar-link-academics');
-  const academicsLink2 = document.getElementById('sidebar-link-academics-2');
-
-  function goToAcademics(e) {
-    if (e) e.preventDefault();
-    closeDrawer();
-    showScreen('academics');
-  }
-
-  if (academicsLink)  academicsLink.addEventListener('click',  goToAcademics);
-  if (academicsLink2) academicsLink2.addEventListener('click', goToAcademics);
-
-  // Home button on academics screen → back to dashboard
-  const btnAcademicsHome = document.getElementById('btn-academics-home');
-  if (btnAcademicsHome) {
-    btnAcademicsHome.addEventListener('click', () => {
-      showScreen('dashboard');
-    });
-  }
 
 });

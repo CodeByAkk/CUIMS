@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -495,7 +495,7 @@
         <nav class="sidebar-nav">
           <ul class="sidebar-menu">
             <li class="sidebar-item">
-              <a href="#" class="sidebar-link" id="sidebar-link-academics">
+              <a href="#" class="sidebar-link">
                 <span class="sidebar-link-text">Academics</span>
                 <svg class="sidebar-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="9 18 15 12 9 6"/></svg>
               </a>
@@ -1223,9 +1223,9 @@
   </div>
 
   <!-- ========================================== -->
-  <!-- SCREEN: ACADEMICS                          -->
+  <!-- SCREEN 4: ACADEMICS / ATTENDANCE           -->
   <!-- ========================================== -->
-  <div id="screen-academics" class="screen-view hidden" aria-label="Academics Screen">
+  <div id="screen-academics" class="screen-view hidden" aria-label="Academics Attendance Screen">
 
     <!-- Top Navigation Bar (same as dashboard) -->
     <header class="dashboard-navbar">
@@ -1238,12 +1238,25 @@
           </svg>
         </button>
         <div class="cuims-brand-logo nav-logo">
-          <div class="cuims-logo-mark nav-mark"><span class="cu-badge">CU</span></div>
+          <div class="cuims-logo-mark nav-mark">
+            <span class="cu-badge">CU</span>
+          </div>
           <div class="cuims-logo-text">
             <div class="ims-title">IMS</div>
             <div class="ims-sub-1">CHANDIGARH UNIVERSITY</div>
             <div class="ims-sub-2">INFORMATION MANAGEMENT SYSTEM</div>
           </div>
+        </div>
+      </div>
+      <div class="nav-center">
+        <div class="nav-search-bar">
+          <input type="text" placeholder="Search & Bookmark your page" aria-label="Search and Bookmark your page">
+          <button type="button" class="search-submit-btn" aria-label="Search">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2.2" width="16" height="16">
+              <circle cx="11" cy="11" r="8"/>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+          </button>
         </div>
       </div>
       <div class="nav-right">
@@ -1253,10 +1266,22 @@
             <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
           </svg>
         </button>
-        <button type="button" class="nav-icon-btn" aria-label="Home" title="Home" id="btn-academics-home">
+        <button type="button" class="nav-icon-btn" aria-label="Bookmarks" title="Bookmarks">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+          </svg>
+        </button>
+        <button type="button" class="nav-icon-btn" aria-label="Home" title="Home">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
             <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
             <polyline points="9 22 9 12 15 12 15 22"/>
+          </svg>
+        </button>
+        <button type="button" class="nav-icon-btn" aria-label="Settings" title="Settings">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+            <circle cx="12" cy="12" r="3"/>
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
           </svg>
         </button>
         <div class="user-profile-cluster">
@@ -1264,32 +1289,120 @@
             <span class="user-name">AMUL</span>
             <span class="user-uid">26BCS12924</span>
           </div>
-          <div class="user-avatar-wrap" style="cursor:pointer;">
+          <div class="user-avatar-wrap" id="btn-back-to-dashboard-from-academics" title="Back to Dashboard" style="cursor:pointer;">
             <img src="assets/amul_avatar.png?v=3" alt="Student Profile Avatar" class="user-avatar-img">
           </div>
         </div>
       </div>
     </header>
 
-    <div class="dashboard-main-layout" id="academics-main-layout">
-      <!-- Sidebar Drawer -->
-      <aside class="sidebar-drawer" aria-label="Navigation Drawer">
+    <div class="dashboard-main-layout">
+      <!-- Left Side Navigation Drawer -->
+      <aside class="sidebar-drawer" id="sidebar-drawer-academics" aria-label="Academics Navigation Drawer">
         <nav class="sidebar-nav">
           <ul class="sidebar-menu">
             <li class="sidebar-item">
-              <a href="#" class="sidebar-link" id="sidebar-link-academics-2">
+              <a href="#" class="sidebar-link sidebar-link-active">
                 <span class="sidebar-link-text">Academics</span>
                 <svg class="sidebar-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="9 18 15 12 9 6"/></svg>
               </a>
             </li>
-            <li class="sidebar-item"><a href="#" class="sidebar-link"><span class="sidebar-link-text">Accounts</span><svg class="sidebar-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="9 18 15 12 9 6"/></svg></a></li>
-            <li class="sidebar-item"><a href="#" class="sidebar-link"><span class="sidebar-link-text">Administration</span><svg class="sidebar-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="9 18 15 12 9 6"/></svg></a></li>
-            <li class="sidebar-item"><a href="#" class="sidebar-link"><span class="sidebar-link-text">Apply for Loan Documents</span></a></li>
-            <li class="sidebar-item"><a href="#" class="sidebar-link"><span class="sidebar-link-text">Apply for NOC</span></a></li>
-            <li class="sidebar-item"><a href="#" class="sidebar-link"><span class="sidebar-link-text">Examination</span><svg class="sidebar-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="9 18 15 12 9 6"/></svg></a></li>
-            <li class="sidebar-item"><a href="#" class="sidebar-link"><span class="sidebar-link-text">Hostel</span><svg class="sidebar-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="9 18 15 12 9 6"/></svg></a></li>
-            <li class="sidebar-item"><a href="#" class="sidebar-link"><span class="sidebar-link-text">Placement</span><svg class="sidebar-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="9 18 15 12 9 6"/></svg></a></li>
-            <li class="sidebar-item"><a href="#" class="sidebar-link"><span class="sidebar-link-text">Feedback</span><svg class="sidebar-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="9 18 15 12 9 6"/></svg></a></li>
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link">
+                <span class="sidebar-link-text">Accounts</span>
+                <svg class="sidebar-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="9 18 15 12 9 6"/></svg>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link">
+                <span class="sidebar-link-text">Administration</span>
+                <svg class="sidebar-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="9 18 15 12 9 6"/></svg>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link">
+                <span class="sidebar-link-text">Apply for Loan Documents</span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link">
+                <span class="sidebar-link-text">Apply for NOC</span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link">
+                <span class="sidebar-link-text">Apply Internship NOC</span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link">
+                <span class="sidebar-link-text">Centre For Student Wellbeing (CSW)</span>
+                <svg class="sidebar-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="9 18 15 12 9 6"/></svg>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link">
+                <span class="sidebar-link-text">Counseling Therapy Clinic Registration</span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link">
+                <span class="sidebar-link-text">DCPD</span>
+                <svg class="sidebar-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="9 18 15 12 9 6"/></svg>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link">
+                <span class="sidebar-link-text">DLL MOOC Coordinator List</span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link">
+                <span class="sidebar-link-text">E Library</span>
+                <svg class="sidebar-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="9 18 15 12 9 6"/></svg>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link">
+                <span class="sidebar-link-text">Examination</span>
+                <svg class="sidebar-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="9 18 15 12 9 6"/></svg>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link">
+                <span class="sidebar-link-text">Hostel</span>
+                <svg class="sidebar-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="9 18 15 12 9 6"/></svg>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link">
+                <span class="sidebar-link-text">Hostel Leave</span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link">
+                <span class="sidebar-link-text">International Student Coordination Cell</span>
+                <svg class="sidebar-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="9 18 15 12 9 6"/></svg>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link">
+                <span class="sidebar-link-text">Placement</span>
+                <svg class="sidebar-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="9 18 15 12 9 6"/></svg>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link">
+                <span class="sidebar-link-text">Student Welfare</span>
+                <svg class="sidebar-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="9 18 15 12 9 6"/></svg>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a href="#" class="sidebar-link">
+                <span class="sidebar-link-text">Feedback</span>
+                <svg class="sidebar-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="9 18 15 12 9 6"/></svg>
+              </a>
+            </li>
           </ul>
         </nav>
       </aside>
@@ -1297,17 +1410,328 @@
       <!-- Mobile Backdrop -->
       <div class="sidebar-backdrop"></div>
 
-      <!-- Academics Body Content -->
+      <!-- Academics Content -->
       <main class="dashboard-body">
-        <div class="academics-content-wrapper">
-          <img
-            src="assets/academics_attendance.png"
-            alt="Academics Attendance Report"
-            class="academics-image-display"
-            id="academics-img"
-          />
+        <div class="dashboard-container academics-container">
+          
+          <!-- Page Title -->
+          <div class="academics-title-bar">
+            <h1 class="academics-page-title">Attendance</h1>
+          </div>
+
+          <!-- Attendance Graph Section -->
+          <section class="academics-panel attendance-graph-panel">
+            <div class="panel-header-with-menu">
+              <h2 class="panel-title">Attendance Graph</h2>
+              <button type="button" class="nav-icon-btn panel-menu-btn" aria-label="More options">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" width="20" height="20">
+                  <circle cx="12" cy="12" r="1"/>
+                  <circle cx="12" cy="5" r="1"/>
+                  <circle cx="12" cy="19" r="1"/>
+                </svg>
+              </button>
+            </div>
+            <div class="chart-wrapper">
+              <canvas id="attendanceChart" width="1000" height="400"></canvas>
+            </div>
+            <div class="chart-legend">
+              <span class="legend-item">
+                <span class="legend-dot legend-dot-blue"></span>
+                <span class="legend-text">Total Percentage</span>
+              </span>
+            </div>
+          </section>
+
+          <!-- Attendance Table Section -->
+          <section class="academics-panel attendance-table-panel">
+            <div class="panel-header">
+              <h2 class="panel-title">Attendance Table</h2>
+            </div>
+            <div class="table-responsive academics-table-wrap">
+              <table class="academics-table" id="attendanceTable">
+                <thead>
+                  <tr>
+                    <th class="th-course-code">Course Code</th>
+                    <th class="th-title">Title</th>
+                    <th class="th-num">Total Delv.</th>
+                    <th class="th-num">Total Attd.</th>
+                    <th class="th-num">IDL</th>
+                    <th class="th-num">ADL</th>
+                    <th class="th-num">VDL</th>
+                    <th class="th-num">Medical Leave</th>
+                    <th class="th-num">Eligible Delivered</th>
+                    <th class="th-num">Eligible Attended</th>
+                    <th class="th-num">Eligible Percentage</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="td-course-code">25CSH-202</td>
+                    <td class="td-title">Advanced Data Structures</td>
+                    <td class="td-num">49</td>
+                    <td class="td-num">44</td>
+                    <td class="td-num">0</td>
+                    <td class="td-num">0</td>
+                    <td class="td-num">0</td>
+                    <td class="td-num">0</td>
+                    <td class="td-num">49</td>
+                    <td class="td-num">44</td>
+                    <td class="td-num td-percentage">89.8</td>
+                  </tr>
+                  <tr>
+                    <td class="td-course-code">25CSH-204</td>
+                    <td class="td-title">Database Management System</td>
+                    <td class="td-num">45</td>
+                    <td class="td-num">44</td>
+                    <td class="td-num">0</td>
+                    <td class="td-num">0</td>
+                    <td class="td-num">0</td>
+                    <td class="td-num">0</td>
+                    <td class="td-num">45</td>
+                    <td class="td-num">44</td>
+                    <td class="td-num td-percentage">97.78</td>
+                  </tr>
+                  <tr>
+                    <td class="td-course-code">25CSH-208</td>
+                    <td class="td-title">Object Oriented Programming</td>
+                    <td class="td-num">47</td>
+                    <td class="td-num">44</td>
+                    <td class="td-num">0</td>
+                    <td class="td-num">0</td>
+                    <td class="td-num">0</td>
+                    <td class="td-num">0</td>
+                    <td class="td-num">47</td>
+                    <td class="td-num">44</td>
+                    <td class="td-num td-percentage">93.62</td>
+                  </tr>
+                  <tr>
+                    <td class="td-course-code">25CST-201</td>
+                    <td class="td-title">Computer Organization and Architecture</td>
+                    <td class="td-num">27</td>
+                    <td class="td-num">25</td>
+                    <td class="td-num">0</td>
+                    <td class="td-num">0</td>
+                    <td class="td-num">0</td>
+                    <td class="td-num">0</td>
+                    <td class="td-num">27</td>
+                    <td class="td-num">25</td>
+                    <td class="td-num td-percentage">92.59</td>
+                  </tr>
+                  <tr>
+                    <td class="td-course-code">25INT-221</td>
+                    <td class="td-title">Entrepreneurship Mindset</td>
+                    <td class="td-num">10</td>
+                    <td class="td-num">9</td>
+                    <td class="td-num">0</td>
+                    <td class="td-num">0</td>
+                    <td class="td-num">0</td>
+                    <td class="td-num">0</td>
+                    <td class="td-num">10</td>
+                    <td class="td-num">9</td>
+                    <td class="td-num td-percentage">90</td>
+                  </tr>
+                  <tr>
+                    <td class="td-course-code">25RST-231</td>
+                    <td class="td-title">Critical Enquiry and Research Methodology</td>
+                    <td class="td-num">9</td>
+                    <td class="td-num">9</td>
+                    <td class="td-num">0</td>
+                    <td class="td-num">0</td>
+                    <td class="td-num">0</td>
+                    <td class="td-num">0</td>
+                    <td class="td-num">9</td>
+                    <td class="td-num">9</td>
+                    <td class="td-num td-percentage">100</td>
+                  </tr>
+                  <tr>
+                    <td class="td-course-code">25SMH-241</td>
+                    <td class="td-title">Probability and Statistics</td>
+                    <td class="td-num">44</td>
+                    <td class="td-num">38</td>
+                    <td class="td-num">0</td>
+                    <td class="td-num">0</td>
+                    <td class="td-num">0</td>
+                    <td class="td-num">0</td>
+                    <td class="td-num">44</td>
+                    <td class="td-num">38</td>
+                    <td class="td-num td-percentage">86.36</td>
+                  </tr>
+                  <tr>
+                    <td class="td-course-code">25TDP-211</td>
+                    <td class="td-title">SOFT SKILLS - I</td>
+                    <td class="td-num">20</td>
+                    <td class="td-num">18</td>
+                    <td class="td-num">0</td>
+                    <td class="td-num">0</td>
+                    <td class="td-num">0</td>
+                    <td class="td-num">0</td>
+                    <td class="td-num">20</td>
+                    <td class="td-num">18</td>
+                    <td class="td-num td-percentage">90</td>
+                  </tr>
+                  <tr>
+                    <td class="td-course-code">25UCI-203</td>
+                    <td class="td-title">Social Internship</td>
+                    <td class="td-num">0</td>
+                    <td class="td-num">0</td>
+                    <td class="td-num">0</td>
+                    <td class="td-num">0</td>
+                    <td class="td-num">0</td>
+                    <td class="td-num">0</td>
+                    <td class="td-num">0</td>
+                    <td class="td-num">0</td>
+                    <td class="td-num td-percentage">0</td>
+                  </tr>
+                  <tr>
+                    <td class="td-course-code">25UCT-296</td>
+                    <td class="td-title">Universal Human Values, Ethics and Life Skills-2</td>
+                    <td class="td-num">20</td>
+                    <td class="td-num">20</td>
+                    <td class="td-num">0</td>
+                    <td class="td-num">0</td>
+                    <td class="td-num">0</td>
+                    <td class="td-num">0</td>
+                    <td class="td-num">20</td>
+                    <td class="td-num">20</td>
+                    <td class="td-num td-percentage">100</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
         </div>
       </main>
+    </div>
+  </div>
+
+  <!-- Hidden Virtual ID Card for PDF export (matches uploaded card exactly) -->
+  <div id="virtual-id-card-print" style="
+    position: fixed;
+    left: -9999px;
+    top: 0;
+    width: 638px;
+    height: 404px;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #fff;
+    border: 2px solid #ccc;
+    box-sizing: border-box;
+    overflow: hidden;
+  ">
+
+    <!-- Red top strip with logo + barcode -->
+    <div style="display:flex; align-items:stretch; height:82px; background:#fff; border-bottom:1px solid #ddd;">
+      <!-- CU Logo block -->
+      <div style="width:130px; background:#c8102e; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:6px;">
+        <div style="background:#fff; border-radius:50%; width:46px; height:46px; display:flex; align-items:center; justify-content:center; margin-bottom:4px;">
+          <svg viewBox="0 0 50 50" width="40" height="40">
+            <circle cx="25" cy="25" r="24" fill="#c8102e" stroke="#fff" stroke-width="1"/>
+            <text x="50%" y="55%" text-anchor="middle" dominant-baseline="middle" fill="#fff" font-size="14" font-weight="bold" font-family="Arial">CU</text>
+          </svg>
+        </div>
+        <div style="color:#fff; font-size:6.5px; text-align:center; line-height:1.3; font-weight:bold;">CHANDIGARH<br>UNIVERSITY</div>
+        <div style="color:#fff; font-size:5px; text-align:center; font-style:italic;">Discover. Learn. Empower.</div>
+      </div>
+      <!-- University name -->
+      <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; background:#fff;">
+        <div style="color:#c8102e; font-size:28px; font-weight:900; letter-spacing:1px; line-height:1;">CHANDIGARH</div>
+        <div style="color:#c8102e; font-size:22px; font-weight:900; letter-spacing:1px; line-height:1;">UNIVERSITY</div>
+      </div>
+      <!-- Barcode area -->
+      <div style="width:200px; display:flex; align-items:center; justify-content:center; padding-right:10px;">
+        <svg viewBox="0 0 180 60" width="180" height="60" xmlns="http://www.w3.org/2000/svg">
+          <!-- Barcode bars -->
+          <rect x="0"  y="0" width="3"  height="60" fill="#000"/><rect x="5"  y="0" width="1"  height="60" fill="#000"/>
+          <rect x="8"  y="0" width="2"  height="60" fill="#000"/><rect x="12" y="0" width="3"  height="60" fill="#000"/>
+          <rect x="17" y="0" width="1"  height="60" fill="#000"/><rect x="20" y="0" width="4"  height="60" fill="#000"/>
+          <rect x="26" y="0" width="2"  height="60" fill="#000"/><rect x="30" y="0" width="1"  height="60" fill="#000"/>
+          <rect x="33" y="0" width="3"  height="60" fill="#000"/><rect x="38" y="0" width="2"  height="60" fill="#000"/>
+          <rect x="42" y="0" width="1"  height="60" fill="#000"/><rect x="45" y="0" width="4"  height="60" fill="#000"/>
+          <rect x="51" y="0" width="2"  height="60" fill="#000"/><rect x="55" y="0" width="1"  height="60" fill="#000"/>
+          <rect x="58" y="0" width="3"  height="60" fill="#000"/><rect x="63" y="0" width="2"  height="60" fill="#000"/>
+          <rect x="67" y="0" width="1"  height="60" fill="#000"/><rect x="70" y="0" width="3"  height="60" fill="#000"/>
+          <rect x="75" y="0" width="2"  height="60" fill="#000"/><rect x="79" y="0" width="1"  height="60" fill="#000"/>
+          <rect x="82" y="0" width="4"  height="60" fill="#000"/><rect x="88" y="0" width="2"  height="60" fill="#000"/>
+          <rect x="92" y="0" width="1"  height="60" fill="#000"/><rect x="95" y="0" width="3"  height="60" fill="#000"/>
+          <rect x="100" y="0" width="2" height="60" fill="#000"/><rect x="104" y="0" width="1" height="60" fill="#000"/>
+          <rect x="107" y="0" width="4" height="60" fill="#000"/><rect x="113" y="0" width="2" height="60" fill="#000"/>
+          <rect x="117" y="0" width="1" height="60" fill="#000"/><rect x="120" y="0" width="3" height="60" fill="#000"/>
+          <rect x="125" y="0" width="2" height="60" fill="#000"/><rect x="129" y="0" width="1" height="60" fill="#000"/>
+          <rect x="132" y="0" width="4" height="60" fill="#000"/><rect x="138" y="0" width="2" height="60" fill="#000"/>
+          <rect x="142" y="0" width="3" height="60" fill="#000"/><rect x="147" y="0" width="1" height="60" fill="#000"/>
+          <rect x="150" y="0" width="4" height="60" fill="#000"/><rect x="156" y="0" width="2" height="60" fill="#000"/>
+          <rect x="160" y="0" width="1" height="60" fill="#000"/><rect x="163" y="0" width="3" height="60" fill="#000"/>
+          <rect x="168" y="0" width="2" height="60" fill="#000"/><rect x="172" y="0" width="3" height="60" fill="#000"/>
+          <rect x="177" y="0" width="2" height="60" fill="#000"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- University ID row -->
+    <div style="display:flex; align-items:center; justify-content:flex-end; padding:4px 12px 2px 0; background:#fff; border-bottom:1px solid #ddd;">
+      <span style="font-size:12px; font-weight:bold; color:#000; letter-spacing:0.5px;">UNIVERSITY ID &nbsp; <span style="color:#c8102e;">26BCS12924</span></span>
+    </div>
+
+    <!-- Middle section: photo + details + HOSTELLER -->
+    <div style="display:flex; height:200px; background:#fff; position:relative; padding:10px 10px 6px 10px;">
+      <!-- Left: student photo -->
+      <div style="width:110px; flex-shrink:0; display:flex; flex-direction:column; align-items:center;">
+        <div style="width:90px; height:115px; border:2px solid #333; overflow:hidden; margin-bottom:6px;">
+          <img src="assets/amul_avatar.jpg" alt="Student Photo" style="width:100%; height:100%; object-fit:cover; object-position:top;" crossorigin="anonymous">
+        </div>
+        <!-- Signature area -->
+        <div style="font-size:9px; color:#333; font-style:italic; text-align:center; border-top:1px solid #999; width:90px; padding-top:2px;">Issuing Authority</div>
+      </div>
+
+      <!-- Details table -->
+      <div style="flex:1; padding-left:10px; display:flex; flex-direction:column; justify-content:flex-start; gap:7px;">
+        <div style="display:grid; grid-template-columns:130px 1fr; font-size:12px; color:#000;">
+          <span style="font-weight:bold;">NAME</span>
+          <span>: AMUL KUMAR KUSHVAHA</span>
+        </div>
+        <div style="display:grid; grid-template-columns:130px 1fr; font-size:12px; color:#000;">
+          <span style="font-weight:bold;">COURSE</span>
+          <span>: B.E. (CSE)</span>
+        </div>
+        <div style="display:grid; grid-template-columns:130px 1fr; font-size:12px; color:#000;">
+          <span style="font-weight:bold;">FATHER'S NAME</span>
+          <span>: SANJAY PRASAD</span>
+        </div>
+        <div style="display:grid; grid-template-columns:130px 1fr; font-size:12px; color:#000;">
+          <span style="font-weight:bold;">MOTHER'S NAME</span>
+          <span>: SANGITA DEVI</span>
+        </div>
+        <div style="display:grid; grid-template-columns:130px 1fr; font-size:12px; color:#000;">
+          <span style="font-weight:bold;">CONTACT</span>
+          <span>: 7033223475</span>
+        </div>
+        <div style="display:grid; grid-template-columns:130px 1fr; font-size:12px; color:#c8102e; font-weight:bold;">
+          <span>ADDRESS</span>
+          <span style="color:#000; font-weight:normal; font-size:10px;">VALID TILL : JUN-2030</span>
+        </div>
+        <div style="font-size:9.5px; color:#000;">C O SANJAY PRASAD MANGALPUR GADARIA WEST CHAMPARAN BIHAR,WEST CHAMP</div>
+        <div style="font-size:9px; color:#555; font-style:italic; margin-top:2px;">Certified that above mentioned student is registered under Chandigarh University</div>
+      </div>
+
+      <!-- HOSTELLER badge (vertical, right side) -->
+      <div style="position:absolute; right:0; top:0; bottom:0; width:28px; background:#4caf50; display:flex; align-items:center; justify-content:center;">
+        <span style="color:#fff; font-size:11px; font-weight:bold; writing-mode:vertical-rl; text-orientation:mixed; transform:rotate(180deg); letter-spacing:2px;">HOSTELLER</span>
+      </div>
+    </div>
+
+    <!-- Red bottom strip -->
+    <div style="background:#c8102e; padding:5px 10px; display:flex; align-items:flex-start; justify-content:space-between;">
+      <div style="color:#fff; font-size:9px; line-height:1.7;">
+        <div>1. Student must carry &amp; wear this card during the campus hour</div>
+        <div>2. This card is issued for identification purpose only.</div>
+        <div style="font-size:8px; margin-top:2px;">If found please return to Chandigarh University &nbsp;Tel +91-160 3014444, 3014424</div>
+        <div style="font-size:7.5px; font-style:italic;">(This Virtual ID Card is valid only up to commencement of regular on-campus classes.)</div>
+        <div style="font-size:7px; margin-top:3px; opacity:0.8;">2324269-0172-4177-0881-2198533/2111</div>
+      </div>
+      <div style="text-align:right; color:#fff; font-size:11px; line-height:1.6; font-weight:bold;">
+        <div>www.cuchd.in</div>
+        <div style="font-size:14px;">1800 200 0025</div>
+      </div>
     </div>
 
   </div>

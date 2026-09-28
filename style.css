@@ -1,0 +1,2248 @@
+/* ==========================================================================
+   CUIMS UI/UX DEMO - STYLESHEET
+   Accurately recreating visual structure of Chandigarh University CUIMS Portal
+   ========================================================================== */
+
+:root {
+  --cu-red: #d01923;
+  --cu-red-hover: #b8141d;
+  --cu-red-dark: #a31119;
+  --cu-navy: #15395b;
+  --cu-navy-card: #184364;
+  --cu-navy-heading: #173d63;
+  --cu-green-border: #22c55e;
+  --cu-sky-btn: #e0f2fe;
+  --cu-sky-text: #0284c7;
+  --cu-bg-dash: #edf0f5;
+  --cu-card-bg: #ffffff;
+  --cu-text-main: #1f2937;
+  --cu-text-muted: #64748b;
+  --cu-border: #e2e8f0;
+  
+  --font-main: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-heading: 'Poppins', 'Open Sans', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: #ffffff;
+  color: var(--cu-text-main);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+/* Views management */
+.screen-view {
+  display: block;
+}
+
+.screen-view.hidden {
+  display: none !important;
+}
+
+/* ==========================================
+   SHARED CUIMS LOGO COMPONENT
+   ========================================== */
+.cuims-brand-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  user-select: none;
+}
+
+.cuims-logo-mark {
+  background: radial-gradient(circle at 35% 35%, #eb2b35, #ba0f17);
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(208, 25, 35, 0.35);
+  position: relative;
+}
+
+.cu-badge {
+  color: #ffffff;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 27px;
+  letter-spacing: -1.5px;
+  line-height: 1;
+}
+
+.cuims-logo-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.ims-title {
+  font-family: var(--font-heading);
+  font-weight: 900;
+  font-size: 34px;
+  color: #111111;
+  line-height: 0.85;
+  letter-spacing: -0.5px;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.15);
+}
+
+.ims-sub-1 {
+  font-size: 7.5px;
+  font-weight: 800;
+  color: #222222;
+  letter-spacing: 0.8px;
+  margin-top: 4px;
+  line-height: 1.1;
+}
+
+.ims-sub-2 {
+  font-size: 5.8px;
+  font-weight: 700;
+  color: #444444;
+  letter-spacing: 0.5px;
+  line-height: 1.1;
+}
+
+/* Smaller nav logo */
+.cuims-brand-logo.nav-logo .cuims-logo-mark {
+  width: 44px;
+  height: 44px;
+}
+
+.cuims-brand-logo.nav-logo .cu-badge {
+  font-size: 21px;
+}
+
+.cuims-brand-logo.nav-logo .ims-title {
+  font-size: 26px;
+}
+
+.cuims-brand-logo.nav-logo .ims-sub-1 {
+  font-size: 6.5px;
+}
+
+.cuims-brand-logo.nav-logo .ims-sub-2 {
+  font-size: 5.2px;
+}
+
+.cuims-brand-logo.small .cuims-logo-mark {
+  width: 40px;
+  height: 40px;
+}
+
+.cuims-brand-logo.small .cu-badge {
+  font-size: 19px;
+}
+
+.cuims-brand-logo.small .ims-title {
+  font-size: 24px;
+}
+
+/* ==========================================
+   SCREEN 1: LOGIN PAGE
+   ========================================== */
+.login-page-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  /* Top half is white, bottom half is vibrant red */
+  background: linear-gradient(
+    to bottom,
+    #ffffff 0%,
+    #ffffff 52%,
+    var(--cu-red) 52%,
+    var(--cu-red) 100%
+  );
+  position: relative;
+}
+
+/* Header with center logo */
+.login-header-area {
+  padding: 40px 20px 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Cards Wrapper */
+.cards-outer-wrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 30px 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.cards-grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  width: 100%;
+}
+
+/* Individual Login Card */
+.login-card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 32px 24px 28px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  position: relative;
+  min-height: 300px;
+}
+
+.login-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12);
+}
+
+.card-icon-wrap {
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  color: #111111;
+}
+
+.card-title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 19px;
+  color: #111111;
+  margin-bottom: 12px;
+  letter-spacing: -0.3px;
+}
+
+.card-description {
+  font-size: 11.8px;
+  line-height: 1.55;
+  color: #555555;
+  margin-bottom: 24px;
+  flex-grow: 1;
+}
+
+.card-action {
+  width: 100%;
+  margin-top: auto;
+}
+
+/* Red Login Button */
+.btn-login-red {
+  display: inline-block;
+  background-color: var(--cu-red);
+  color: #ffffff;
+  font-family: var(--font-main);
+  font-size: 12.5px;
+  font-weight: 700;
+  padding: 8px 24px;
+  border-radius: 24px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+  outline: none;
+}
+
+.btn-login-red:hover {
+  background-color: var(--cu-red-hover);
+  transform: scale(1.02);
+}
+
+.btn-login-red:active {
+  transform: scale(0.98);
+}
+
+/* Bottom Weather Strip */
+.login-weather-strip {
+  background-color: transparent;
+  color: #ffffff;
+  padding: 16px 40px 24px;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.weather-strip-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* City current weather */
+.weather-current-city {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.weather-city-label {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 14px;
+  line-height: 1.15;
+  letter-spacing: 0.5px;
+  text-align: right;
+}
+
+.weather-icon-main {
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+}
+
+.weather-temp-main {
+  display: flex;
+  flex-direction: column;
+}
+
+.weather-temp-main .temp-val {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.weather-temp-main .temp-sky {
+  font-size: 12px;
+  font-weight: 400;
+  opacity: 0.95;
+  margin-top: 2px;
+}
+
+/* Forecast list */
+.weather-forecast-list {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.forecast-day-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.forecast-day-name {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+.forecast-icon {
+  color: #ffffff;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.forecast-temps {
+  display: flex;
+  gap: 8px;
+  font-size: 11px;
+}
+
+.forecast-temps .t-high {
+  font-weight: 700;
+}
+
+.forecast-temps .t-low {
+  font-weight: 400;
+  opacity: 0.9;
+}
+
+/* ==========================================
+   CUIMS AUTHENTIC LOGIN MODAL (MOHALI CAMPUS)
+   ========================================== */
+.modal-overlay.cuims-login-overlay {
+  position: fixed;
+  inset: 0;
+  background: url('assets/login_bg.jpg') center/cover no-repeat, rgba(0, 0, 0, 0.55);
+  background-blend-mode: darken;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  padding: 20px;
+  animation: fadeIn 0.25s ease;
+}
+
+.modal-overlay.hidden {
+  display: none !important;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.cuims-login-card {
+  background: rgba(36, 40, 44, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 28px;
+  width: 100%;
+  max-width: 430px;
+  padding: 40px 34px 34px;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.65), 0 10px 25px rgba(0, 0, 0, 0.4);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  animation: slideUp 0.25s ease;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(24px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.btn-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 26px;
+  color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  line-height: 1;
+  transition: color 0.15s ease;
+}
+
+.btn-modal-close:hover {
+  color: #ffffff;
+}
+
+.login-card-logo {
+  margin-bottom: 12px;
+}
+
+.white-text .ims-title {
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.white-text .ims-sub-1 {
+  color: #ffffff;
+}
+
+.white-text .ims-sub-2 {
+  color: #cbd5e1;
+}
+
+.login-main-heading {
+  font-family: var(--font-heading);
+  font-size: 32px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 10px 0 8px;
+  letter-spacing: -0.5px;
+}
+
+.login-campus-subtitle {
+  font-size: 13px;
+  line-height: 1.45;
+  color: #d1d5db;
+  margin-bottom: 24px;
+}
+
+.highlight-campus-red {
+  color: #ef233c;
+  font-weight: 700;
+}
+
+.cuims-auth-form {
+  width: 100%;
+}
+
+.auth-step-panel {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.auth-step-panel.hidden {
+  display: none !important;
+}
+
+.cuims-input-group {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.cuims-input-group input {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 12px;
+  padding: 13px 44px 13px 18px;
+  font-size: 14px;
+  font-family: inherit;
+  color: #ffffff;
+  outline: none;
+  transition: all 0.2s;
+}
+
+.cuims-input-group input::placeholder {
+  color: #8e959e;
+}
+
+.cuims-input-group input:focus {
+  background-color: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 0 0 3px rgba(225, 29, 39, 0.25);
+}
+
+.input-right-icon {
+  position: absolute;
+  right: 14px;
+  color: #9ca3af;
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+}
+
+button.input-right-icon {
+  pointer-events: auto;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+button.input-right-icon:hover {
+  color: #ffffff;
+}
+
+.auth-error-msg {
+  color: #f87171;
+  font-size: 12px;
+  margin-bottom: 10px;
+  text-align: left;
+  padding-left: 4px;
+}
+
+.auth-error-msg.hidden {
+  display: none;
+}
+
+.btn-auth-red {
+  background-color: #e11d27;
+  color: #ffffff;
+  font-family: var(--font-heading);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  padding: 12px 20px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.15s, transform 0.1s;
+  box-shadow: 0 4px 14px rgba(225, 29, 39, 0.35);
+}
+
+.btn-auth-red:hover {
+  background-color: #c9141e;
+  transform: translateY(-1px);
+}
+
+.btn-auth-red:active {
+  transform: translateY(0);
+}
+
+.auth-divider-or {
+  color: #e2e8f0;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  margin: 14px 0;
+  text-align: center;
+}
+
+.btn-auth-blue {
+  background-color: #3d799f;
+  color: #ffffff;
+  font-family: var(--font-heading);
+  font-size: 13.5px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  padding: 12px 20px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.15s;
+  box-shadow: 0 4px 12px rgba(61, 121, 159, 0.3);
+}
+
+.btn-auth-blue:hover {
+  background-color: #346889;
+}
+
+.active-user-badge {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  padding: 8px 14px;
+  margin-bottom: 12px;
+  color: #ffffff;
+  font-size: 13px;
+}
+
+.badge-uid-label {
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.btn-back-step {
+  background: none;
+  border: none;
+  color: #60a5fa;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.app-store-badges-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 26px;
+  width: 100%;
+}
+
+.app-badge-btn {
+  background-color: #0b0d0e;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 8px;
+  padding: 6px 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  flex: 1;
+  max-width: 175px;
+  user-select: none;
+  transition: background-color 0.15s, border-color 0.15s;
+}
+
+.app-badge-btn:hover {
+  background-color: #1a1c1e;
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.badge-text-wrap {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.badge-micro {
+  font-size: 7px;
+  color: #cbd5e1;
+  text-transform: uppercase;
+  line-height: 1;
+  letter-spacing: 0.3px;
+}
+
+.badge-brand {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.2;
+  font-family: var(--font-heading);
+}
+
+/* ==========================================
+   SCREEN 2: STUDENT DASHBOARD
+   ========================================== */
+#screen-dashboard {
+  background-color: var(--cu-bg-dash);
+  min-height: 100vh;
+}
+
+/* Navbar */
+.dashboard-navbar {
+  background-color: #ffffff;
+  height: 64px;
+  border-bottom: 1px solid var(--cu-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.nav-icon-btn {
+  background: none;
+  border: none;
+  color: #4b5563;
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.15s, color 0.15s;
+}
+
+.nav-icon-btn:hover {
+  background-color: #f1f5f9;
+  color: #111827;
+}
+
+.hamburger-btn {
+  color: #1f2937;
+}
+
+/* Search bar */
+.nav-center {
+  flex: 1;
+  max-width: 480px;
+  margin: 0 24px;
+}
+
+.nav-search-bar {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.nav-search-bar input {
+  width: 100%;
+  background-color: #f1f3f5;
+  border: 1px solid transparent;
+  border-radius: 9999px;
+  padding: 8px 42px 8px 18px;
+  font-size: 13px;
+  color: #334155;
+  outline: none;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.nav-search-bar input:focus {
+  background-color: #ffffff;
+  border-color: #cbd5e1;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.04);
+}
+
+.search-submit-btn {
+  position: absolute;
+  right: 12px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 4px;
+}
+
+/* Nav right */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.user-profile-cluster {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: 12px;
+  padding-left: 14px;
+  border-left: 1px solid #e2e8f0;
+}
+
+.user-text-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.user-name {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 13px;
+  color: #111827;
+  line-height: 1.15;
+}
+
+.user-uid {
+  font-size: 11px;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.user-avatar-wrap {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #e2e8f0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+}
+
+.user-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.btn-logout {
+  background: #fef2f2;
+  border: 1px solid #fee2e2;
+  color: var(--cu-red);
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-left: 4px;
+  transition: all 0.15s;
+}
+
+.btn-logout:hover {
+  background-color: var(--cu-red);
+  color: #ffffff;
+}
+
+/* ==========================================
+   DASHBOARD MAIN LAYOUT & SIDEBAR DRAWER
+   ========================================== */
+.dashboard-main-layout {
+  display: flex;
+  min-height: calc(100vh - 64px);
+  position: relative;
+  width: 100%;
+}
+
+.sidebar-drawer {
+  width: 240px;
+  min-width: 240px;
+  max-width: 240px;
+  background-color: #ffffff;
+  border-right: 1px solid #e2e8f0;
+  box-shadow: 2px 0 6px rgba(0, 0, 0, 0.03);
+  position: sticky;
+  top: 64px;
+  height: calc(100vh - 64px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  flex-shrink: 0;
+  z-index: 80;
+  margin-left: -240px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: margin-left 0.28s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s ease, visibility 0.28s ease;
+}
+
+/* Custom slim scrollbar */
+.sidebar-drawer::-webkit-scrollbar {
+  width: 5px;
+}
+.sidebar-drawer::-webkit-scrollbar-track {
+  background: #f8fafc;
+}
+.sidebar-drawer::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+.sidebar-drawer::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+.dashboard-main-layout.drawer-open .sidebar-drawer {
+  margin-left: 0;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.sidebar-nav {
+  padding: 6px 0 24px;
+}
+
+.sidebar-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar-item {
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 11px 18px;
+  font-family: var(--font-main);
+  font-size: 13px;
+  font-weight: 600;
+  color: #273b53;
+  text-decoration: none;
+  border-bottom: 1px solid #f1f4f9;
+  transition: background-color 0.15s ease, color 0.15s ease, padding-left 0.15s ease;
+  line-height: 1.35;
+}
+
+.sidebar-link:hover {
+  background-color: #f1f5f9;
+  color: #1d4ed8;
+  padding-left: 20px;
+}
+
+.sidebar-link-text {
+  flex: 1;
+  padding-right: 8px;
+}
+
+.sidebar-chevron {
+  color: #64748b;
+  flex-shrink: 0;
+  transition: transform 0.15s ease, color 0.15s ease;
+}
+
+.sidebar-link:hover .sidebar-chevron {
+  color: #1d4ed8;
+  transform: translateX(2px);
+}
+
+.sidebar-backdrop {
+  display: none;
+}
+
+@media (max-width: 992px) {
+  .sidebar-drawer {
+    position: fixed;
+    top: 64px;
+    left: 0;
+    bottom: 0;
+    height: calc(100vh - 64px);
+    z-index: 150;
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.15);
+  }
+
+  .sidebar-backdrop {
+    display: block;
+    position: fixed;
+    top: 64px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 140;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+  }
+
+  .dashboard-main-layout.drawer-open .sidebar-backdrop {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+}
+
+/* ==========================================
+   DASHBOARD BODY
+   ========================================== */
+.dashboard-body {
+  flex: 1;
+  min-width: 0;
+  padding: 16px 20px 32px;
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dashboard-container {
+  max-width: 1540px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Row 1: Top 5 Quick Action Cards */
+.quick-cards-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
+}
+
+.dash-quick-card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+  transition: transform 0.15s, box-shadow 0.15s;
+  cursor: pointer;
+}
+
+.dash-quick-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.quick-card-left {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.quick-title {
+  font-family: var(--font-heading);
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.quick-subtitle {
+  font-size: 10.5px;
+  font-weight: 700;
+  color: #64748b;
+  letter-spacing: 0.3px;
+}
+
+.quick-icon-box {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-blue {
+  background-color: #eff6ff;
+}
+
+.icon-purple {
+  background-color: #faf5ff;
+}
+
+.icon-indigo {
+  background-color: #eef2ff;
+}
+
+/* Highlighted CU LMS Card */
+.dash-quick-card.highlighted-lms-card {
+  background-color: var(--cu-navy-card);
+  border: 2px solid var(--cu-green-border);
+}
+
+.lms-white-text {
+  color: #ffffff !important;
+}
+
+.lms-white-sub {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+.icon-transparent {
+  background: transparent;
+}
+
+/* Row 2: Weather & Download ID */
+.secondary-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.weather-dashboard-card {
+  background-color: var(--cu-navy);
+  color: #ffffff;
+  border-radius: 10px;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.cu-weather-left {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  width: 100%;
+}
+
+.weather-dash-labels {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 11.5px;
+  line-height: 1.2;
+  letter-spacing: 0.5px;
+}
+
+.weather-dash-moon {
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+}
+
+.weather-dash-temp {
+  display: flex;
+  flex-direction: column;
+}
+
+.temp-degree {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.temp-condition {
+  font-size: 10.5px;
+  opacity: 0.9;
+}
+
+.virtual-id-card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+}
+
+.virtual-id-text h3 {
+  font-family: var(--font-heading);
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.btn-download-virtual {
+  background-color: var(--cu-sky-btn);
+  color: var(--cu-sky-text);
+  border: none;
+  font-family: var(--font-main);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 7px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.btn-download-virtual:hover {
+  background-color: #bae6fd;
+}
+
+/* ==========================================
+   MAIN 3-COLUMN CONTENT GRID
+   ========================================== */
+.main-columns-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.35fr 1.55fr;
+  gap: 16px;
+  align-items: start;
+}
+
+.dash-panel {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-direction: column;
+  min-height: 440px;
+}
+
+.panel-header {
+  margin-bottom: 16px;
+}
+
+.panel-title {
+  font-family: var(--font-heading);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--cu-navy-heading);
+  letter-spacing: -0.2px;
+}
+
+/* Column 1: Important Message */
+.card-important-message .message-inner-box {
+  background-color: #f8fafc;
+  border-radius: 8px;
+  padding: 16px;
+  border: 1px solid #f1f5f9;
+  font-size: 12px;
+  line-height: 1.6;
+  color: #334155;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.text-muted {
+  color: #64748b;
+  font-size: 11px;
+}
+
+.document-remarks {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.remarks-label {
+  font-size: 11.5px;
+  color: #475569;
+  font-weight: 600;
+}
+
+.remarks-status {
+  font-weight: 700;
+  color: #1e293b;
+  font-size: 12px;
+}
+
+/* Column 2: My Course & Attendance */
+.card-course-attendance .course-program-title {
+  font-size: 12px;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.attendance-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.attendance-table thead th {
+  background-color: #f1f5f9;
+  color: #334155;
+  font-weight: 700;
+  padding: 8px 10px;
+  border: 1px solid #e2e8f0;
+}
+
+.th-subject {
+  text-align: left;
+}
+
+.th-sem {
+  text-align: center;
+  width: 48px;
+}
+
+.th-perc {
+  text-align: right;
+  width: 58px;
+}
+
+.attendance-table tbody tr {
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.attendance-table tbody tr:nth-child(even) {
+  background-color: #fafbfc;
+}
+
+.attendance-table tbody tr:hover {
+  background-color: #f1f5f9;
+}
+
+.attendance-table td {
+  padding: 7px 10px;
+  border: 1px solid #e2e8f0;
+  color: #334155;
+}
+
+.td-subject {
+  font-weight: 500;
+}
+
+.td-sem {
+  text-align: center;
+}
+
+.td-perc {
+  text-align: right;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+/* Column 3: Announcements */
+.announcements-header {
+  margin-bottom: 12px;
+}
+
+.announcement-controls {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.announcement-search {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.announcement-search input {
+  width: 100%;
+  background-color: #f1f3f5;
+  border: 1px solid transparent;
+  border-radius: 9999px;
+  padding: 6px 34px 6px 14px;
+  font-size: 12px;
+  color: #334155;
+  outline: none;
+}
+
+.announcement-search input:focus {
+  background-color: #ffffff;
+  border-color: #cbd5e1;
+}
+
+.announcement-search button {
+  position: absolute;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.announcement-dropdown select {
+  background-color: #f1f3f5;
+  border: 1px solid transparent;
+  border-radius: 9999px;
+  padding: 6px 16px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #334155;
+  outline: none;
+  cursor: pointer;
+}
+
+/* Announcement Detail Card */
+.announcement-notice-card {
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 16px;
+  background-color: #ffffff;
+}
+
+.notice-title-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.pin-icon {
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+.notice-title {
+  font-family: var(--font-heading);
+  font-size: 13.5px;
+  font-weight: 800;
+  color: #1e293b;
+  line-height: 1.3;
+}
+
+.notice-meta-tags {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.meta-tag {
+  background-color: #3b5998;
+  color: #ffffff;
+  font-size: 10.5px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.notice-text-content {
+  font-size: 11.5px;
+  line-height: 1.55;
+  color: #334155;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.notice-schedule-note {
+  background-color: #f8fafc;
+  padding: 8px 10px;
+  border-radius: 6px;
+  border-left: 3px solid var(--cu-red);
+}
+
+.notice-schedule-heading {
+  font-weight: 700;
+  color: #1e293b;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.schedule-table-wrap {
+  overflow-x: auto;
+}
+
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 11px;
+}
+
+.schedule-table th {
+  background-color: #f1f5f9;
+  color: #334155;
+  font-weight: 700;
+  padding: 6px 8px;
+  border: 1px solid #e2e8f0;
+  text-align: left;
+}
+
+.schedule-table td {
+  padding: 6px 8px;
+  border: 1px solid #e2e8f0;
+  color: #334155;
+}
+
+/* ==========================================
+   RESPONSIVE MEDIA QUERIES
+   ========================================== */
+@media (max-width: 1200px) {
+  .cards-grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .login-page-container {
+    background: linear-gradient(
+      to bottom,
+      #ffffff 0%,
+      #ffffff 45%,
+      var(--cu-red) 45%,
+      var(--cu-red) 100%
+    );
+  }
+
+  .quick-cards-row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .main-columns-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 860px) {
+  .quick-cards-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .secondary-row {
+    grid-template-columns: 1fr;
+  }
+
+  .weather-strip-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .weather-forecast-list {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  .cards-grid-container {
+    grid-template-columns: 1fr;
+  }
+
+  .quick-cards-row {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-center {
+    display: none;
+  }
+
+  .user-text-info {
+    display: none;
+  }
+
+  .login-card {
+    min-height: auto;
+  }
+}
+
+/* ==========================================
+   MY PROFILE PAGE STYLES
+   ========================================== */
+
+.profile-page-container {
+  padding: 18px 20px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Title bar */
+.profile-title-bar {
+  background: linear-gradient(90deg, #184a8c 0%, #1565c0 100%);
+  border-radius: 6px;
+  padding: 10px 20px;
+  margin-bottom: 16px;
+}
+
+.profile-page-title {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: var(--font-heading);
+  text-align: center;
+  letter-spacing: 0.4px;
+}
+
+/* Section card */
+.profile-section-card {
+  background: #fff;
+  border: 1px solid #dde3ee;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+
+.profile-section-header {
+  background: #e8f0fb;
+  border-left: 4px solid #1565c0;
+  color: #184a8c;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  padding: 7px 14px;
+  text-transform: uppercase;
+}
+
+/* Info body */
+.profile-info-body {
+  padding: 14px 16px 16px;
+}
+
+.profile-info-grid {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.profile-info-left,
+.profile-info-right {
+  flex: 1;
+  min-width: 0;
+}
+
+.profile-info-row {
+  display: flex;
+  gap: 8px;
+  padding: 5px 0;
+  border-bottom: 1px solid #f0f3f8;
+  font-size: 0.82rem;
+  align-items: flex-start;
+}
+
+.profile-info-row:last-child {
+  border-bottom: none;
+}
+
+.pinfo-label {
+  color: #374151;
+  font-weight: 600;
+  white-space: nowrap;
+  min-width: 130px;
+  flex-shrink: 0;
+}
+
+.pinfo-value {
+  color: #1f2937;
+  font-weight: 400;
+  word-break: break-word;
+}
+
+.pinfo-blue {
+  color: #1565c0;
+  font-weight: 600;
+}
+
+/* Profile photo box */
+.profile-photo-wrap {
+  flex-shrink: 0;
+  width: 90px;
+}
+
+.profile-student-photo {
+  width: 88px;
+  height: 105px;
+  object-fit: cover;
+  border: 2px solid #c9d4e8;
+  border-radius: 4px;
+  display: block;
+}
+
+/* Qualification table */
+.profile-qual-table-wrap {
+  overflow-x: auto;
+  padding: 0;
+}
+
+.profile-qual-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+}
+
+.profile-qual-table thead tr {
+  background: #f5f8ff;
+}
+
+.profile-qual-table th {
+  padding: 9px 12px;
+  text-align: left;
+  color: #374151;
+  font-weight: 700;
+  border-bottom: 2px solid #dde3ee;
+  white-space: nowrap;
+}
+
+.profile-qual-table td {
+  padding: 9px 12px;
+  color: #1f2937;
+  border-bottom: 1px solid #edf0f5;
+  vertical-align: top;
+}
+
+.profile-qual-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.profile-qual-table tbody tr:hover {
+  background: #f8faff;
+}
+
+@media (max-width: 768px) {
+  .profile-info-grid {
+    flex-direction: column;
+  }
+  .profile-photo-wrap {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .profile-student-photo {
+    width: 80px;
+    height: 95px;
+  }
+  .pinfo-label {
+    min-width: 110px;
+  }
+}
+
+/* ==========================================================================
+   EXTENDED RESPONSIVE RULES — LAYOUT ONLY, NO DESIGN CHANGES
+   ========================================================================== */
+
+/* ---- 1200px: Tablets landscape ---- */
+@media (max-width: 1200px) {
+  /* Login page: adjust gradient split for fewer cards */
+  .cards-outer-wrapper {
+    padding: 10px 20px 40px;
+  }
+
+  /* Dashboard: quick cards 3-col */
+  .quick-cards-row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Dashboard: 3-col content → 1-col stack */
+  .main-columns-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Reduce panel min-height on tablet */
+  .dash-panel {
+    min-height: auto;
+  }
+
+  /* Nav search: shrink */
+  .nav-center {
+    max-width: 320px;
+    margin: 0 12px;
+  }
+}
+
+/* ---- 992px: Small tablets / large phones landscape ---- */
+@media (max-width: 992px) {
+  /* Sidebar: becomes overlay (already handled above at 992px) */
+
+  /* Navbar: tighten spacing */
+  .dashboard-navbar {
+    padding: 0 14px;
+  }
+
+  .nav-center {
+    max-width: 260px;
+    margin: 0 8px;
+  }
+
+  /* Quick cards: 3-col */
+  .quick-cards-row {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+
+  /* Secondary row stacks */
+  .secondary-row {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  /* Content columns: all full width */
+  .main-columns-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .dash-panel {
+    min-height: auto;
+  }
+
+  /* Login page cards: 2-col */
+  .cards-grid-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .login-page-container {
+    background: linear-gradient(
+      to bottom,
+      #ffffff 0%,
+      #ffffff 45%,
+      var(--cu-red) 45%,
+      var(--cu-red) 100%
+    );
+  }
+
+  /* Dashboard body: reduce padding */
+  .dashboard-body {
+    padding: 12px 14px 28px;
+  }
+}
+
+/* ---- 860px: Phones landscape / small tablets ---- */
+@media (max-width: 860px) {
+  .quick-cards-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .secondary-row {
+    grid-template-columns: 1fr;
+  }
+
+  /* Login weather: wrap forecast */
+  .weather-strip-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .weather-forecast-list {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  /* Login header logo: shrink */
+  .login-header-area {
+    padding: 28px 16px 18px;
+  }
+
+  /* Profile page */
+  .profile-page-container {
+    padding: 12px 12px 32px;
+  }
+}
+
+/* ---- 640px: Mobile portrait ---- */
+@media (max-width: 640px) {
+  /* Login page */
+  .cards-grid-container {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .cards-outer-wrapper {
+    padding: 8px 14px 32px;
+  }
+
+  .login-card {
+    min-height: auto;
+    padding: 24px 18px 20px;
+  }
+
+  .login-header-area {
+    padding: 24px 14px 14px;
+  }
+
+  /* Login logo: smaller */
+  .cuims-logo-mark {
+    width: 46px;
+    height: 46px;
+  }
+  .cu-badge {
+    font-size: 22px;
+  }
+  .ims-title {
+    font-size: 26px;
+  }
+  .ims-sub-1 {
+    font-size: 6.5px;
+  }
+
+  /* Login weather strip */
+  .login-weather-strip {
+    padding: 12px 14px 20px;
+  }
+
+  /* Dashboard navbar */
+  .dashboard-navbar {
+    padding: 0 10px;
+    height: 56px;
+  }
+
+  /* Sidebar offset matches smaller navbar */
+  .sidebar-drawer {
+    top: 56px;
+    height: calc(100vh - 56px);
+  }
+
+  .dashboard-main-layout {
+    min-height: calc(100vh - 56px);
+  }
+
+  /* Hide search bar on mobile */
+  .nav-center {
+    display: none;
+  }
+
+  /* Hide user name text on mobile */
+  .user-text-info {
+    display: none;
+  }
+
+  /* Nav right: reduce gap */
+  .nav-right {
+    gap: 4px;
+  }
+
+  /* Quick cards: 1-col */
+  .quick-cards-row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  /* Quick card: full-width layout */
+  .dash-quick-card {
+    padding: 12px 14px;
+  }
+
+  /* Secondary row */
+  .secondary-row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  /* Virtual ID card row: wrap */
+  .virtual-id-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 12px 14px;
+  }
+
+  .virtual-id-btn-wrap {
+    width: 100%;
+  }
+
+  .btn-download-virtual {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Content panels: full width */
+  .main-columns-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .dashboard-body {
+    padding: 10px 10px 24px;
+  }
+
+  .dashboard-container {
+    gap: 10px;
+  }
+
+  /* Announcement controls: wrap */
+  .announcement-controls {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .announcement-dropdown select {
+    width: 100%;
+  }
+
+  /* Notice meta tags: wrap */
+  .notice-meta-tags {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  /* Login modal card */
+  .cuims-login-card {
+    padding: 30px 22px 26px;
+    border-radius: 20px;
+  }
+
+  .login-main-heading {
+    font-size: 26px;
+  }
+
+  /* Profile page */
+  .profile-page-container {
+    padding: 10px 10px 28px;
+  }
+
+  .profile-info-grid {
+    flex-direction: column;
+  }
+
+  .profile-photo-wrap {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 12px;
+  }
+
+  .pinfo-label {
+    min-width: 100px;
+  }
+}
+
+/* ---- 480px: Small phones ---- */
+@media (max-width: 480px) {
+  /* Login page logo: even smaller */
+  .cuims-logo-mark {
+    width: 40px;
+    height: 40px;
+  }
+  .cu-badge {
+    font-size: 19px;
+  }
+  .ims-title {
+    font-size: 22px;
+  }
+  .ims-sub-1 {
+    font-size: 6px;
+  }
+  .ims-sub-2 {
+    font-size: 5px;
+  }
+
+  /* Login card */
+  .login-card {
+    padding: 20px 14px 16px;
+  }
+
+  .card-title {
+    font-size: 16px;
+  }
+
+  .card-description {
+    font-size: 11px;
+  }
+
+  /* Navbar: tighter */
+  .dashboard-navbar {
+    padding: 0 8px;
+    height: 52px;
+  }
+
+  .sidebar-drawer {
+    top: 52px;
+    height: calc(100vh - 52px);
+  }
+
+  .dashboard-main-layout {
+    min-height: calc(100vh - 52px);
+  }
+
+  .nav-icon-btn {
+    width: 32px;
+    height: 32px;
+  }
+
+  /* Nav logo: smaller on small phones */
+  .cuims-brand-logo.nav-logo .cuims-logo-mark {
+    width: 34px;
+    height: 34px;
+  }
+  .cuims-brand-logo.nav-logo .cu-badge {
+    font-size: 16px;
+  }
+  .cuims-brand-logo.nav-logo .ims-title {
+    font-size: 20px;
+  }
+  .cuims-brand-logo.nav-logo .ims-sub-1 {
+    font-size: 5.5px;
+  }
+  .cuims-brand-logo.nav-logo .ims-sub-2 {
+    font-size: 4.5px;
+  }
+
+  /* User avatar */
+  .user-avatar-wrap {
+    width: 32px;
+    height: 32px;
+  }
+
+  /* Dashboard body */
+  .dashboard-body {
+    padding: 8px 8px 20px;
+  }
+
+  .dashboard-container {
+    gap: 8px;
+  }
+
+  /* Quick card: even tighter */
+  .dash-quick-card {
+    padding: 10px 12px;
+  }
+
+  .quick-title {
+    font-size: 12.5px;
+  }
+
+  .quick-icon-box {
+    width: 34px;
+    height: 34px;
+  }
+
+  /* Weather card */
+  .weather-dashboard-card {
+    padding: 10px 14px;
+  }
+
+  .temp-degree {
+    font-size: 18px;
+  }
+
+  /* Panel */
+  .dash-panel {
+    padding: 14px;
+  }
+
+  /* Attendance table: scrollable */
+  .table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Announcement card */
+  .announcement-notice-card {
+    padding: 12px;
+  }
+
+  /* Login modal */
+  .cuims-login-card {
+    padding: 24px 16px 20px;
+    border-radius: 16px;
+  }
+
+  .login-main-heading {
+    font-size: 24px;
+  }
+
+  /* App store badges */
+  .app-store-badges-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .app-badge-btn {
+    max-width: 100%;
+  }
+
+  /* Profile page */
+  .profile-page-container {
+    padding: 8px 8px 24px;
+  }
+
+  .pinfo-label {
+    min-width: 90px;
+    font-size: 0.78rem;
+  }
+
+  .pinfo-value {
+    font-size: 0.78rem;
+  }
+
+  .profile-info-row {
+    font-size: 0.78rem;
+  }
+}
+
+/* ---- 360px: Very small phones ---- */
+@media (max-width: 360px) {
+  /* Navbar: minimal */
+  .dashboard-navbar {
+    padding: 0 6px;
+    height: 50px;
+  }
+
+  .sidebar-drawer {
+    top: 50px;
+    height: calc(100vh - 50px);
+  }
+
+  .dashboard-main-layout {
+    min-height: calc(100vh - 50px);
+  }
+
+  /* Login logo: minimal */
+  .ims-title {
+    font-size: 20px;
+  }
+  .cuims-logo-mark {
+    width: 36px;
+    height: 36px;
+  }
+  .cu-badge {
+    font-size: 17px;
+  }
+
+  /* User profile cluster: tighter */
+  .user-profile-cluster {
+    margin-left: 6px;
+    padding-left: 8px;
+    gap: 8px;
+  }
+
+  /* Dashboard body */
+  .dashboard-body {
+    padding: 6px 6px 16px;
+  }
+
+  /* Quick cards */
+  .quick-cards-row {
+    gap: 6px;
+  }
+
+  .dash-quick-card {
+    padding: 8px 10px;
+  }
+
+  .quick-title {
+    font-size: 11.5px;
+  }
+
+  .quick-subtitle {
+    font-size: 9.5px;
+  }
+
+  /* Panels */
+  .dash-panel {
+    padding: 12px 10px;
+  }
+
+  /* Login card */
+  .cards-outer-wrapper {
+    padding: 6px 10px 28px;
+  }
+
+  .login-card {
+    padding: 18px 12px 14px;
+  }
+
+  /* Login modal */
+  .cuims-login-card {
+    padding: 20px 14px 18px;
+  }
+}
